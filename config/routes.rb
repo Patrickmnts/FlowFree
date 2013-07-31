@@ -1,6 +1,7 @@
 Flowfree::Application.routes.draw do
   devise_for :users
   resources :rivers
+  resources :users
 
   root to: 'site#index'
 
