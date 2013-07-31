@@ -16,6 +16,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :production do
