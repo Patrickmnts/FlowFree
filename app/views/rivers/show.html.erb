@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Site name:</strong>
+  <%= @river.site_name %>
+</p>
+
+<p>
+  <strong>Site code:</strong>
+  <%= @river.site_code %>
+</p>
+
+<p>
+  <strong>Refresh time:</strong>
+  <%= @river.refresh_time %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @river.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @river.longitude %>
+</p>
+
+<p>
+  <strong>Srs:</strong>
+  <%= @river.srs %>
+</p>
+
+<p>
+  <strong>County:</strong>
+  <%= @river.county_id %>
+</p>
+
+<p>
+  <strong>Cfs value:</strong>
+  <%= @river.cfs_value %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @river.state %>
+</p>
+
+<%= link_to 'Edit', edit_river_path(@river) %> |
+<%= link_to 'Back', rivers_path %>

@@ -1,4 +1,27 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
+
+gem 'cancan'
+gem 'devise'
+gem 'simple_form'
+gem 'bootstrap-rails'
+gem 'httparty'
+gem 'json'
+gem 'active_model_serializers'
+gem 'rails_12factor'
+
+group :development, :test do
+  gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'rspec-rails'
+end
+
+group :production do
+  gem 'pg'
+  gem 'turbolinks'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
