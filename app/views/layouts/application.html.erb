@@ -9,21 +9,25 @@
 <body>
   <div class="container">
     <div class="row" id="header">
-      <div class="span6">
+      <div class="span3">
         <h1>FreeFlow</h1>
       </div>
 <!-- LOGIN FORM -->
-      <div class="span2 offset4">
+      <div class="span2 offset7">
         <p>Sign in link...</p>
         <p>Sign up link...</p>
       </div>
     </div>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <%= notice %>
+      <%= alert %>
     <div class="row span12">
       <%= yield %>
     </div>
+    <div class="row">
+      <div class="span12 footer pull-right">
+        <p>created with love @ portland code school</p>
+      </div>
+    </div>
   </div>
-
 </body>
 </html>

@@ -1,0 +1,36 @@
+@import "bootstrap";
+
+/*@darkOlive = #576035
+@lightOlive = #AFC757
+@aquaGreen = #0DD3B2
+@#0FAD8C
+@darkBlue = #002149*/
+
+body {
+/* background-image: asset-data-url('river-background.png');
+ background-repeat: no-repeat;
+ background-position: relative;
+*/}
+
+.state_list {
+  margin-top: 10px;
+}
+.container {
+
+}
+
+.img {
+  border-radius: 25px;
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+.alert {
+  color: white;
+}
+
+.footer {
+  text-align: right;
+}
