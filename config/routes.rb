@@ -5,10 +5,6 @@ Flowfree::Application.routes.draw do
 
   root to: 'site#index'
 
-
-
-  root to: 'site#index'
-
   match '/users/sign_in', to: 'devise/sessions#new', via: 'get'
   match '/users/sign_up', to: 'devise/registrations#new', via: 'get'
   match '/users/sign_out', to: 'devise/sessions#destroy', via: 'delete'
