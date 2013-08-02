@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="span10">
+  <div class="span10 offset1">
     <h3><%= @river.site_name %></h3>
   </div>
 </div>
@@ -41,6 +41,12 @@
       <%= @river.county_id %>
     </p>
     <%= link_to 'Back', rivers_path %>
+  </div>
+</div>
+<div class="row">
+  <div class="span12">
+    <h3>HOW ABOUT SOME SWEET GRAPHS HERE!?</h3>
+    <div id="graph"></div>
   </div>
 </div>
 

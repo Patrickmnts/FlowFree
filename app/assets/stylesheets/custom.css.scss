@@ -38,18 +38,19 @@ h1, h3 {
 
 .footer {
   text-align: right;
+  height: 70px;
 }
 
 table td {
   border: 1px solid #030303;
   margin: 0;
-  padding: 10px;
+  padding: 3px;
   width: 100%;
 }
 
-#square {
+#graph {
   height: 250px;
-  width: 250px;
+  width: 100%;
   border: 1px solid #000;
 }
 

@@ -1,4 +1,8 @@
-<h1>Listing rivers</h1>
+<div class="row">
+  <div class="span10">
+    <h1>Gauge List</h1>
+  </div>
+</div>
 
 <table>
   <thead>
@@ -27,10 +31,8 @@
         <td><%= river.longitude %></td>
         <td><%= river.county_id %></td>
         <td><%= river.cfs_value %></td>
-        <td><%= river.state %></td>
-        <td><%= link_to 'Show', river %></td>
-        <td><%= link_to 'Edit', edit_river_path(river) %></td>
-        <td><%= link_to 'Drain', river, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= river.state.upcase %></td>
+        <td><%= link_to 'details', river %></td>
       </tr>
     <% end %>
   </tbody>
