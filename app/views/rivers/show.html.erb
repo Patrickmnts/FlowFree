@@ -1,49 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="span10">
+    <h3><%= @river.site_name %></h3>
+  </div>
+</div>
+<div class="row">
+  <div class="span4 offset2">
+    <div id='square'>
+      <%= image_tag("http://maps.googleapis.com/maps/api/staticmap?center=#{@river.latitude},#{@river.longitude}&zoom=14&size=350x350&maptype=hybrid&sensor=false")%>
+    </div>
+  </div>
 
-<p>
-  <strong>Site name:</strong>
-  <%= @river.site_name %>
-</p>
+  <div class="span6">
+    <p id="notice"><%= notice %></p>
+    <p>
+      <strong>State:</strong>
+      <%= @river.state.upcase %>
+    </p>
+    <p>
+      <strong>Cfs value:</strong>
+      <%= @river.cfs_value %>
+    </p>
+    <p>
+      <strong>Latitude:</strong>
+      <%= @river.latitude %>
+    </p>
+    <p>
+      <strong>Longitude:</strong>
+      <%= @river.longitude %>
+    </p>
+    <p>
+      <strong>Site code:</strong>
+      <%= @river.site_code %>
+    </p>
+    <p>
+      <strong>Refresh time:</strong>
+      <%= @river.refresh_time %>
+    </p>
+    <p>
+      <strong>County:</strong>
+      <%= @river.county_id %>
+    </p>
+    <%= link_to 'Back', rivers_path %>
+  </div>
+</div>
 
-<p>
-  <strong>Site code:</strong>
-  <%= @river.site_code %>
-</p>
-
-<p>
-  <strong>Refresh time:</strong>
-  <%= @river.refresh_time %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @river.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @river.longitude %>
-</p>
-
-<p>
-  <strong>Srs:</strong>
-  <%= @river.srs %>
-</p>
-
-<p>
-  <strong>County:</strong>
-  <%= @river.county_id %>
-</p>
-
-<p>
-  <strong>Cfs value:</strong>
-  <%= @river.cfs_value %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @river.state %>
-</p>
-
-<%= link_to 'Edit', edit_river_path(@river) %> |
-<%= link_to 'Back', rivers_path %>

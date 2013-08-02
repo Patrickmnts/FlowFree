@@ -12,10 +12,15 @@ body {
  background-position: relative;
 */}
 
+.map p {
+  text-align: center;
+}
+
 .state_list {
   margin-top: 10px;
 }
-.container {
+#list {
+  margin-top: 10px;
 
 }
 
@@ -34,3 +39,17 @@ h1, h3 {
 .footer {
   text-align: right;
 }
+
+table td {
+  border: 1px solid #030303;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+}
+
+#square {
+  height: 250px;
+  width: 250px;
+  border: 1px solid #000;
+}
+

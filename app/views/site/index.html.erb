@@ -6,24 +6,18 @@
   </div>
 </div>
 <div class="row">
-  <div class="span10 offset1">
+  <div class="span10 offset1 map">
     <h1>Search for River Flows By State</h1>
+    <p>(Clicky Map!!!)</p>
     <%= image_tag('USA_USA.jpg', class: "img") %>
   </div>
 </div>
 <div class="row">
-  <div class="span4 offset4">
+  <div class="span4 offset4" id="list">
     <%= form_tag @rivers do %>
     <%= select_tag :state, options_for_select(us_states) %>
     <% end %>
   </div>
 </div>
-<div class="row">
-  <div class="span4">
-    <h3>Map of Location Choices</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, odit, accusantium, tenetur reprehenderit assumenda maiores deserunt ipsam quas consequuntur unde at natus laboriosam fuga beatae dolores amet doloremque rerum quos!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, qui, maxime, fugit, iste doloribus excepturi consequuntur nemo optio tenetur voluptatem ratione blanditiis. Nobis, possimus similique commodi modi recusandae accusamus ut.</p>
-  </div>
-</div>
-
 
 
