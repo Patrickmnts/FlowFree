@@ -1,3 +1,4 @@
+# TODO: I still need to write tests for this.
 class Api
   require 'httparty'
 
