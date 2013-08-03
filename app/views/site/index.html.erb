@@ -14,9 +14,28 @@
 <div class="row">
   <div class="span4 offset4" id="list">
     <%= form_tag @rivers do %>
-    <%= select_tag :state, options_for_select(us_states) %>
+      <%= select_tag :state, options_for_select(us_states) %>
     <% end %>
   </div>
 </div>
 
+<!-- use jquery to select that particular DOM click evernt .target and then use javascript to generate the new url to redirect to new view. -->
 
+<!-- STACK OVERFLOW ABOUT THE STATE DROPDOWN MENU..
+http://stackoverflow.com/questions/5602169/rails-drop-down-menu-to-execute-actions-in-the-controller
+If you don't mind using jQuery, this is what I would do:
+Have a hash defined something like:
+
+@urls = {"Create New USer..." => new_user_url, "Create new expense", => new_expense_path}
+
+Then in the view have:
+
+select_tag :create-model, options_for_select(@urls)
+
+Then in application.js or something like that
+
+$('#create-model').change(function() {
+  window.location = $(this).find('option:selected').val();
+});
+I haven't tried it but it should work without too much editing.
+ -->
