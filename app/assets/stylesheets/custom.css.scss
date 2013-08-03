@@ -1,0 +1,56 @@
+@import "bootstrap";
+
+/*@darkOlive = #576035
+@lightOlive = #AFC757
+@aquaGreen = #0DD3B2
+@#0FAD8C
+@darkBlue = #002149*/
+
+body {
+/* background-image: asset-data-url('river-background.png');
+ background-repeat: no-repeat;
+ background-position: relative;
+*/}
+
+.map p {
+  text-align: center;
+}
+
+.state_list {
+  margin-top: 10px;
+}
+#list {
+  margin-top: 10px;
+
+}
+
+.img {
+  border-radius: 25px;
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+.alert {
+  color: white;
+}
+
+.footer {
+  text-align: right;
+  height: 70px;
+}
+
+table td {
+  border: 1px solid #030303;
+  margin: 0;
+  padding: 3px;
+  width: 100%;
+}
+
+#graph {
+  height: 250px;
+  width: 100%;
+  border: 1px solid #000;
+}
+

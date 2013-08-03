@@ -19,12 +19,14 @@ class Api
   def self.sanitize(site, state)
     begin
       site_name = site["sourceInfo"]["siteName"].split.map(&:capitalize).join(' ')
+      puts site_name
       site_code = site["sourceInfo"]["siteCode"][0]["value"]
       refresh_time = site["values"][0]["value"][0]["dateTime"]
       latitude = site["sourceInfo"]["geoLocation"]["geogLocation"]["latitude"].to_s
       longitude = site["sourceInfo"]["geoLocation"]["geogLocation"]["longitude"].to_s
       county_id = Api.get_county_code(site["sourceInfo"]["siteProperty"])
       cfs_value = site["values"][0]["value"][0]["value"]
+      puts cfs_value
     rescue
       puts "Error" #FIXME: We should do something better here.
     end

@@ -9,28 +9,27 @@
 <body>
   <div class="container">
     <div class="row" id="header">
-      <div class="span6">
-        <h1>FreeFlow</h1>
+      <div class="span3">
+        <h1><a href="/">FlowFree</a></h1>
       </div>
 <!-- LOGIN FORM -->
+      <div class="span2 offset7">
+        <a href="#">Sign in link...</a>
+        <br/>
+        <a href="#">Sign up link...</a>
+      </div>
     </div>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <%= notice %>
+      <%= alert %>
     <div class="row span12">
       <%= yield %>
     </div>
     <div class="row">
-      <div class="span12">
-        <h2>Site Description</h2>
+      <div class="span12 footer pull-right">
+        <br/>
+        <p>created with love @ portland code school</p>
       </div>
     </div>
-    <div class="row">
-      <div class="span12">
-        <h2>Map of Location Choices</h2>
-      </div>
-    </div>
-
   </div>
-
 </body>
 </html>
