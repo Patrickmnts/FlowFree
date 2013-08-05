@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130731175526) do
+ActiveRecord::Schema.define(version: 20130805181516) do
 
   create_table "rivers", force: true do |t|
     t.string   "site_name"

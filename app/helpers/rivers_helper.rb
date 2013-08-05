@@ -54,5 +54,9 @@ module RiversHelper
   ]
   end
 
+  def full_name(state_abrev)
+    us_states.select { |state| state[1] == state_abrev }.first.first
+  end
+
 
 end

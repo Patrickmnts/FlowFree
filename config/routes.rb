@@ -1,6 +1,8 @@
 Flowfree::Application.routes.draw do
   devise_for :users
-  resources :rivers
+
+  get '/rivers/state/:state', to: 'rivers#index'
+  resources :rivers, :except => :index
   resources :users
 
   root to: 'site#index'
@@ -8,7 +10,7 @@ Flowfree::Application.routes.draw do
   get '/users/sign_in', to: 'devise/sessions#new'
   get '/users/sign_up', to: 'devise/registrations#new'
   match '/users/sign_out', to: 'devise/sessions#destroy', via: 'delete'
-  get '/rivers/index', to: 'rivers#show'
+  # get '/rivers/index', to: 'rivers#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
