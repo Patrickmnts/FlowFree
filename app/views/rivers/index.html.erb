@@ -1,43 +1,60 @@
 <div class="row">
   <div class="span10">
-    <h1>Gauge List</h1>
+    <h1><%= @rivers.first.state %></h1>
   </div>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Site name</th>
-      <th>Site code</th>
-      <th>Refresh time</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>County</th>
-      <th>Cfs value</th>
-      <th>State</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="span6">
+      <h4>Map</h4>
+    <div class="state-map">
+      <p>THIS IS A MAP OF <%= @rivers.first.state %></p>
+    </div>
+  </div>
+  <div class="span6">
+      <h4>Info</h4>
+    <div class="state-info">
+      <p><%= @rivers.first.state %> Graphs</p>
+    </div>
+  </div>
+</div>
 
-  <tbody>
-    <% @rivers.each do |river| %>
-      <tr>
-        <td><%= river.site_name %></td>
-        <td><%= river.site_code %></td>
-        <td><%= river.refresh_time %></td>
-        <td><%= river.latitude %></td>
-        <td><%= river.longitude %></td>
-        <td><%= river.county_id %></td>
-        <td><%= river.cfs_value %></td>
-        <td><%= river.state.upcase %></td>
-        <td><%= link_to 'details', river %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="span12 state-gage-table">
 
-<br>
+    <table>
+      <thead>
+        <tr>
+          <th>Site name</th>
+          <th>Site code</th>
+          <th>Refresh time</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>County</th>
+          <th>Flow</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-<%= link_to 'New River', new_river_path %>
+      <tbody>
+        <% @rivers.each do |river| %>
+          <tr>
+            <td><%= river.site_name %></td>
+            <td><%= river.site_code %></td>
+            <td><%= river.refresh_time %></td>
+            <td><%= river.latitude %></td>
+            <td><%= river.longitude %></td>
+            <td><%= river.county_id %></td>
+            <td><%= river.cfs_value %></td>
+            <td><%= link_to 'details', river %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= will_paginate @rivers %>
+  </div>
+</div>
+

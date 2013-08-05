@@ -4,13 +4,15 @@ class RiversController < ApplicationController
   # GET /rivers
   # GET /rivers.json
   def index
-    @rivers = River.all
+    @rivers = River.where(:state => params[:state]).paginate(:page => params[:page])
   end
 
   # GET /rivers/1
   # GET /rivers/1.json
   def show
   end
+
+  def
 
   # GET /rivers/new
   def new
@@ -62,6 +64,7 @@ class RiversController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_river
       @river = River.find(params[:id])

@@ -1,1 +1,39 @@
-I am the state of <%= @rivers.state %>
+<% provide(:title, "FlowFree | #{state}") %>
+<div class="row">
+  <div class="span5">
+    <h2>#{state}</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <p>State Map</p>
+
+  </div>
+  <div class="span8">
+    <h3>Guages in #{state}</h3>
+    <table>
+      <tr>
+        <th>Site Name:</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Flow</th>
+        <th>Updated at</th>
+      </tr>
+      <tbody>
+        <% @rivers.each do |river| %>
+          <tr>
+            <td><%= river.site_name %></td>
+            <td><%= river.latitude %></td>
+            <td><%= river.longitude %></td>
+            <td><%= river.flow %></td>
+            <td><%= river.refresh_time %></td>
+            <td><%= link_to 'Show', river %> | </td>
+            <td><%= link_to 'Edit',  %> | </td>
+            <td><%= link_to 'Destroy', river, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
