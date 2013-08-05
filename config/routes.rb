@@ -5,10 +5,12 @@ Flowfree::Application.routes.draw do
 
   root to: 'site#index'
 
-  match '/users/sign_in', to: 'devise/sessions#new', via: 'get'
-  match '/users/sign_up', to: 'devise/registrations#new', via: 'get'
+  get '/users/sign_in', to: 'devise/sessions#new'
+  get '/users/sign_up', to: 'devise/registrations#new'
   match '/users/sign_out', to: 'devise/sessions#destroy', via: 'delete'
-  match '/rivers/index', to: 'rivers#show', via: 'get'
+  get '/rivers/index', to: 'rivers#show'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
