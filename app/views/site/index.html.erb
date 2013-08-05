@@ -12,10 +12,18 @@
   </div>
 </div>
 <div class="row">
-  <div class="span4 offset4" id="list">
-    <%= form_tag @rivers do %>
-      <%= select_tag :state, options_for_select(us_states) %>
-    <% end %>
+  <div class="span4 offset4">
+   <div id='state-drop-dwn'>
+      <%= form_tag  do %>
+        <%= select_tag :state, options_for_select(us_states), :prompt => 'Select A State' %>
+      <% end %>
+    </div>
+    <%= form_tag rivers_path, :method =>'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+      <% end %>
   </div>
 </div>
 

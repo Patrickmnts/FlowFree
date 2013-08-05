@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="span10">
+  <div class="span10 offset1">
     <h1><%= @rivers.first.state %></h1>
   </div>
 </div>
@@ -21,7 +21,12 @@
 
 <div class="row">
   <div class="span12 state-gage-table">
-
+    <%= form_tag rivers_path, :method =>'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+      <% end %>
     <table>
       <thead>
         <tr>
@@ -53,8 +58,9 @@
         <% end %>
       </tbody>
     </table>
-
-    <%= will_paginate @rivers %>
   </div>
 </div>
+    <div class='span8 offset2'>
+      <%= will_paginate @rivers %>
+    </div>
 

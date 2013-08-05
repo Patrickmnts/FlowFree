@@ -4,6 +4,7 @@ class RiversController < ApplicationController
   # GET /rivers
   # GET /rivers.json
   def index
+    # @rivers = River.search(params[:search])
     @rivers = River.where(:state => params[:state]).paginate(:page => params[:page])
   end
 

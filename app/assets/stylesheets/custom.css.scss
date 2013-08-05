@@ -57,17 +57,21 @@ table td {
 
 /*STATE PROFILE PAGE STYLING!!!!*/
 .state-map {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 375px;
   border: 1px solid #000;
 }
 .state-info {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 425px;
   border: 1px solid #000;
 }
 
 .state-gage-table {
   margin-top: 20px;
+}
+
+.paginate {
+  margin: 0 auto;
 }
 
