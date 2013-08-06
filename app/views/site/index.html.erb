@@ -14,11 +14,12 @@
 <div class="row">
   <div class="span4 offset4">
    <div id='state-drop-dwn'>
-      <%= form_tag  do %>
+      <%= form_tag rivers_by_state_path do %>
         <%= select_tag :state, options_for_select(us_states), :prompt => 'Select A State' %>
+        <%= submit_tag "Go!", :name => nil %>
       <% end %>
     </div>
-    <%= form_tag rivers_path, :method =>'get' do %>
+    <%= form_tag rivers_by_name_path do %>
       <p>
         <%= text_field_tag :search, params[:search] %>
         <%= submit_tag "Search", :name => nil %>

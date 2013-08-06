@@ -2,6 +2,10 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function(){
-  var text = $('#state option').val();
+  $('#state').on('change', function(){
+
+  });
+
+    $(this).val()
   console.log(text);
 });

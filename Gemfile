@@ -5,6 +5,7 @@ gem 'cancan'
 gem 'devise'
 gem 'simple_form'
 gem 'bootstrap-sass'
+gem 'flat-ui-rails'
 gem 'httparty'
 gem 'json'
 gem 'active_model_serializers'
@@ -19,6 +20,8 @@ group :development, :test do
   gem 'meta_request'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'pry'
+  gem 'awesome_print'
 end
 
 group :production do
