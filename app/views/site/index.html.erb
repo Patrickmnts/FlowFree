@@ -1,28 +1,28 @@
 <% provide(:title, "FlowFree") %>
 <div class="row">
-  <div class="span12">
+  <div class="large-12 columns">
     <h3>Site Description</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quisquam, cumque excepturi vel ratione magnam saepe nobis fuga quae atque facere animi molestiae perspiciatis natus facilis consequuntur optio sapiente aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio tempora expedita enim dolore quos veniam quo. Saepe, cupiditate, deserunt error praesentium totam suscipit voluptates at itaque incidunt laborum quae officia!</p>
   </div>
 </div>
 <div class="row">
-  <div class="span10 offset1 map">
+  <div class="large-10 large-offset-1 columns map">
     <h1>Search for River Flows By State</h1>
     <%= image_tag('us_rivers_vector.png', class: "img") %>
   </div>
 </div>
 <div class="row">
-  <div class="span4 offset4">
+  <div class="large-4 large-offset-4 columns">
    <div id='state-drop-dwn'>
       <%= form_tag rivers_by_state_path do %>
         <%= select_tag :state, options_for_select(us_states), :prompt => 'Select A State' %>
-        <%= submit_tag "Go!", :name => nil %>
+        <%= submit_tag "Go!" %>
       <% end %>
     </div>
     <%= form_tag rivers_by_name_path do %>
       <p>
         <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search", :name => nil %>
+        <%= submit_tag "Search" %>
       </p>
       <% end %>
   </div>

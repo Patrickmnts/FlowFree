@@ -22,6 +22,7 @@ class RiversController < ApplicationController
       # find me a thing that starts with some stuff & ends with some stuff & has :search in middle
       @rivers = @rivers.where(state: params[:state])
     end
+
     render :index
   end
 
