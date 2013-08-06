@@ -3,6 +3,7 @@ class Api
 
   def self.fetch
     time = Time.now
+    Log.create(message: "Api fetch started at #{time}")
     States.list.each do |state|
       api_output = Api.get_api(state[1])
       api_output["value"]["timeSeries"].each do |site|
@@ -12,6 +13,7 @@ class Api
         end
       end
     end
+    Log.create(message: "Api fetch completed at #{Time.now}")
   end
 
   def self.create_data(site, time, state)
@@ -22,7 +24,11 @@ class Api
   end
 
   def self.get_api(state)
-    HTTParty.get("http://waterservices.usgs.gov/nwis/iv/?format=json&stateCd=#{state}&parameterCd=00060")
+    begin
+      HTTParty.get("http://waterservices.usgs.gov/nwis/iv/?format=json&stateCd=#{state}&parameterCd=00060")
+    rescue
+      Log.create(message: "Error pulling API at #{Time.now}. Likely network related.")
+    end
   end
 
   def self.error?(sanitized)

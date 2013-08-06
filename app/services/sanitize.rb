@@ -4,6 +4,7 @@ class Sanitize
     begin
       site["sourceInfo"]["siteName"].split.map(&:capitalize).join(' ')
     rescue
+      Log.create(message: "Error with site_name sanitizer.")
       return "ERROR"
     end
   end
@@ -12,6 +13,7 @@ class Sanitize
     begin
       site["sourceInfo"]["siteCode"][0]["value"]
     rescue
+      Log.create(message: "Error with site_code sanitizer.")
       return "ERROR"
     end
   end
@@ -20,6 +22,7 @@ class Sanitize
     begin
       site["sourceInfo"]["geoLocation"]["geogLocation"]["latitude"].to_s
     rescue
+      Log.create(message: "Error with latitude sanitizer.")
       return "ERROR"
     end
   end
@@ -28,6 +31,7 @@ class Sanitize
     begin
       site["sourceInfo"]["geoLocation"]["geogLocation"]["longitude"].to_s
     rescue
+      Log.create(message: "Error with longitude sanitizer.")
       return "ERROR"
     end
   end
@@ -36,6 +40,7 @@ class Sanitize
     begin
       site["values"][0]["value"][0]["value"]
     rescue
+      Log.create(message: "Error with cfs_value sanitizer.")
       return "ERROR"
     end
   end
@@ -44,6 +49,7 @@ class Sanitize
     begin
       Sanitize.get_county_code(site["sourceInfo"]["siteProperty"])
     rescue
+      Log.create(message: "Error with county_id sanitizer.")
       return "ERROR"
     end
   end
