@@ -8,14 +8,14 @@ class Api
       api_output["value"]["timeSeries"].each do |site|
         site = Api.sanitize(site)
         unless Api.error?(site)
-          Api.create_data(site, time, state)
+          Api.create_data(site, time, state[1])
         end
       end
     end
   end
 
   def self.create_data(site, time, state)
-    unless Api.river_exist?
+    unless Api.river_exist?(site["site_code"])
       Api.build_river(site, state)
     end
     Api.build_river_time(site, time)

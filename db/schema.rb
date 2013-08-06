@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130731175526) do
+ActiveRecord::Schema.define(version: 20130806173305) do
+
+  create_table "river_times", force: true do |t|
+    t.string   "site_code"
+    t.datetime "time"
+    t.integer  "cfs_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "river_times", ["site_code"], name: "index_river_times_on_site_code"
+  add_index "river_times", ["time"], name: "index_river_times_on_time"
 
   create_table "rivers", force: true do |t|
     t.string   "site_name"
@@ -23,6 +34,8 @@ ActiveRecord::Schema.define(version: 20130731175526) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "rivers", ["site_code"], name: "index_rivers_on_site_code", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
