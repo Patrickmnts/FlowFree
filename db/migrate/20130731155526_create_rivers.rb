@@ -7,6 +7,8 @@ class CreateRivers < ActiveRecord::Migration
       t.string :longitude
       t.string :county_id
       t.string :state
+      t.datetime :time
+      t.integer :cfs_value
 
       t.timestamps
     end
