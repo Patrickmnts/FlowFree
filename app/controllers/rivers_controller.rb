@@ -12,7 +12,19 @@ class RiversController < ApplicationController
   def show
   end
 
-  def
+  def search
+    @rivers = River.all.paginate(:page => params[:page])
+    if params[:search].present?
+      # find me a thing that starts with some stuff & ends with some stuff & has :search in middle
+      @rivers = @rivers.where('site_name LIKE ?', "%#{params[:search]}%")
+    end
+    if params[:state].present?
+      # find me a thing that starts with some stuff & ends with some stuff & has :search in middle
+      @rivers = @rivers.where(state: params[:state])
+    end
+    render :index
+  end
+
 
   # GET /rivers/new
   def new
