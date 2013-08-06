@@ -10,6 +10,6 @@ class CreateRivers < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :site_code, unique: true
+    add_index :rivers, :site_code, unique: true
   end
 end

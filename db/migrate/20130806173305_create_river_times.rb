@@ -7,6 +7,6 @@ class CreateRiverTimes < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :site_code, :time
+    add_index :river_times, :site_code, :time
   end
 end
