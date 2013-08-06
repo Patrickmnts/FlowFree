@@ -11,16 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130805181516) do
+ActiveRecord::Schema.define(version: 20130731175526) do
 
   create_table "rivers", force: true do |t|
     t.string   "site_name"
     t.string   "site_code"
-    t.datetime "refresh_time"
     t.string   "latitude"
     t.string   "longitude"
     t.string   "county_id"
-    t.string   "cfs_value"
     t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"

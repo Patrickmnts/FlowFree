@@ -19,19 +19,19 @@ class Api
   def self.sanitize(site, state)
     begin
       site_name = site["sourceInfo"]["siteName"].split.map(&:capitalize).join(' ')
-      puts site_name
       site_code = site["sourceInfo"]["siteCode"][0]["value"]
-      refresh_time = site["values"][0]["value"][0]["dateTime"]
+      # refresh_time = site["values"][0]["value"][0]["dateTime"]
       latitude = site["sourceInfo"]["geoLocation"]["geogLocation"]["latitude"].to_s
       longitude = site["sourceInfo"]["geoLocation"]["geogLocation"]["longitude"].to_s
       county_id = Api.get_county_code(site["sourceInfo"]["siteProperty"])
-      cfs_value = site["values"][0]["value"][0]["value"]
-      puts cfs_value
+      # cfs_value = site["values"][0]["value"][0]["value"]
     rescue
       puts "Error" #FIXME: We should do something better here.
     end
-    return {site_name: site_name, site_code: site_code, refresh_time: refresh_time, latitude: latitude, longitude: longitude, county_id: county_id, cfs_value: cfs_value, state: state}
+    return {site_name: site_name, site_code: site_code, latitude: latitude, longitude: longitude, county_id: county_id, state: state}
   end
+
+  # {site_name: site_name, site_code: site_code, refresh_time: refresh_time, latitude: latitude, longitude: longitude, county_id: county_id, cfs_value: cfs_value, state: state}
 
   def self.get_county_code(siteProperty)
     siteProperty.each do |hash_item|
