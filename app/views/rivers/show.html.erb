@@ -1,16 +1,16 @@
 <div class="row">
-  <div class="span10 offset1">
+  <div class="large-10 large-offset-1 columns">
     <h3><%= @river.site_name %></h3>
   </div>
 </div>
 <div class="row">
-  <div class="span4 offset2">
+  <div class="large-4 large-offset-2 columns">
     <div id='square'>
       <%= image_tag("http://maps.googleapis.com/maps/api/staticmap?center=#{@river.latitude},#{@river.longitude}&zoom=12&size=350x350&maptype=hybrid&sensor=false")%>
     </div>
   </div>
 
-  <div class="span6">
+  <div class="large-6 columns">
     <p id="notice"><%= notice %></p>
     <p>
       <strong>State:</strong>
@@ -44,7 +44,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="span12">
+  <div class="large-12 columns">
     <h3>HOW ABOUT SOME SWEET GRAPHS HERE!?</h3>
     <div id="graph"></div>
   </div>
