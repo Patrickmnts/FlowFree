@@ -18,7 +18,7 @@ class Api
 
   def self.create_data(site, time, state)
     unless Api.river_exist?(site["site_code"])
-      Api.build_river(site, state)
+      Api.build_river(site, state, time)
     end
     Api.build_river_time(site, time)
   end
@@ -50,24 +50,30 @@ class Api
     return sanitized
   end
 
-  def self.build_river(sanitized, state)
-    river_hash = {site_name: sanitized["site_name"], site_code: sanitized["site_code"], latitude: sanitized["latitude"], longitude: sanitized["longitude"], county_id: sanitized["county_id"], state: state}
+  def self.build_river(sanitized, state, time)
+    river_hash = {site_name: sanitized["site_name"], site_code: sanitized["site_code"], latitude: sanitized["latitude"], longitude: sanitized["longitude"], county_id: sanitized["county_id"], state: state, time: time, cfs_value: sanitized["cfs_value"]}
     Api.write_river(river_hash)
   end
 
   def self.build_river_time(sanitized, time)
     time_hash = {site_code: sanitized["site_code"], time: time, cfs_value: sanitized["cfs_value"]}
     Api.write_time(time_hash)
+    Api.update_river(sanitized, time)
   end
 
   def self.write_river(input)
-    river = River.new(input)
+    River.create(input)
+  end
+
+  def self.update_river(input, time)
+    river = River.where(site_code: input["site_code"]).take
+    river.time = time
+    river.cfs_value = input["cfs_value"]
     river.save
   end
 
   def self.write_time(input)
-    river_time = RiverTime.new(input)
-    river_time.save
+    RiverTime.create(input)
   end
 
 end
