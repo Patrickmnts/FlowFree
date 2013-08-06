@@ -33,15 +33,20 @@ ActiveRecord::Schema.define(version: 20130806193357) do
   create_table "rivers", force: true do |t|
     t.string   "site_name"
     t.string   "site_code"
+    t.datetime "refresh_time"
     t.string   "latitude"
     t.string   "longitude"
     t.string   "county_id"
+    t.string   "cfs_value"
     t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "rivers", ["site_code"], name: "index_rivers_on_site_code", unique: true
+  create_table "states", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -41,6 +41,7 @@
           <th>Longitude</th>
           <th>County</th>
           <th>Flow</th>
+          <th>Follow!</th>
           <th></th>
         </tr>
       </thead>
@@ -50,11 +51,12 @@
           <tr>
             <td><%= river.site_name %></td>
             <td><%= river.site_code %></td>
-            <td><%= river.refresh_time %></td>
+            <td>REFRESH TIME</td>
             <td><%= river.latitude %></td>
             <td><%= river.longitude %></td>
             <td><%= river.county_id %></td>
             <td><%= river.cfs_value %>cfs</td>
+            <td><i class="general foundicon-heart"></i></td>
             <td><%= link_to 'details', river %></td>
           </tr>
         <% end %>
