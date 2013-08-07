@@ -36,8 +36,6 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-will_paginate (0.0.9)
-      will_paginate
     builder (3.1.4)
     callsite (0.0.11)
     cancan (1.6.10)
@@ -65,6 +63,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    foundation-will_paginate (0.0.1)
     hike (1.2.3)
     httparty (0.11.0)
       multi_json (~> 1.0)
@@ -185,10 +184,10 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
-  bootstrap-will_paginate
   cancan
   capybara
   devise
+  foundation-will_paginate
   httparty
   jbuilder (~> 1.2)
   jquery-rails

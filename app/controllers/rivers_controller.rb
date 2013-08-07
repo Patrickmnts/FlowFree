@@ -12,6 +12,22 @@ class RiversController < ApplicationController
   def show
   end
 
+  def post_to_state
+    redirect_to "/rivers/by_state/#{params[:state]}"
+  end
+
+  def post_to_name
+    redirect_to "/rivers/by_name/#{params[:search]}"
+  end
+
+  def post_to_state_and_name
+    redirect_to "/rivers/by_state_and_name/#{params[:state]}/#{params[:search]}"
+  end
+
+  def post_to_user_profile
+    redirect_to "/rivers/for_user/#{params[:id]}"
+  end
+
   def search
     @rivers = River.all.paginate(:page => params[:page])
     if params[:search].present?

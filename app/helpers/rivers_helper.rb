@@ -163,5 +163,7 @@ module RiversHelper
     ]
   end
 
-
+  def markers_for_static_map(rivers)
+    rivers.map { |river| river.latitude + ',' + river.longitude }.join('|')
+  end
 end

@@ -1,14 +1,11 @@
 <div class="row">
-  <div class="large-10 large-offset-1 columns text-center">
-    <h2></h2>
-  </div>
-</div>
 
+</div>
 <div class="row">
   <div class="large-6 columns">
       <h4>Map</h4>
     <div class="state-map">
-      <p>MAP</p>
+      <%= image_tag("http://maps.googleapis.com/maps/api/staticmap?size=350x350&maptype=hybrid&sensor=false&markers=#{markers_for_static_map(@rivers)}", alt: "Map markers for #{params[:search]} in #{params[:state]}")%>
     </div>
   </div>
   <div class="large-6 columns">
@@ -20,13 +17,13 @@
 </div>
 
 <div class="row">
-  <div class="large-10 columns state-gage-table">
+  <div class="large-4 columns state-gage-table">
     <%= form_tag rivers_by_state_by_name_path do %>
-        <%= text_field_tag :search, params[:search], :placeholder => 'Enter river name...' %>
-        <%= hidden_field_tag :state, params[:state] %>
-        <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
-      <% end %>
-      <p>Search: <%= params[:search] %></p>
+    <%= text_field_tag :search, params[:search], :placeholder => 'Search rivers here...' %>
+    <%= hidden_field_tag :state, params[:state] %>
+      <%= submit_tag "Search", :name => nil, class: 'small button searchbutton' %>
+    <% end %>
+    <p>Keywords: <%= params[:search] %></p>
   </div>
 </div>
 
@@ -66,8 +63,8 @@
   </div>
 </div>
 <div class="row">
-  <div class='large-12 columns text-center'>
-    <%= will_paginate @rivers %>
+  <div class='large-12 columns text-center paginate'>
+    <%= will_paginate @rivers, class:'pagination' %>
   </div>
 </div>
 

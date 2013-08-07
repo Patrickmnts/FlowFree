@@ -11,7 +11,7 @@ gem 'json'
 gem 'active_model_serializers'
 gem 'rails_12factor'
 gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+gem 'foundation-will_paginate'
 
 group :development, :test do
   gem 'sqlite3'

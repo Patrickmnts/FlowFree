@@ -14,11 +14,11 @@
     <p id="notice"><%= notice %></p>
     <p>
       <strong>State:</strong>
-      <%= @river.state.upcase %>
+      <%= @river.state.capitalize %>
     </p>
     <p>
       <strong>Cfs value:</strong>
-
+      <%= @river.cfs_value %>
     </p>
     <p>
       <strong>Latitude:</strong>
@@ -30,6 +30,7 @@
     </p>
     <p>
       <strong>Site code:</strong>
+      <%= @river.site_code %>
 
     </p>
     <p>
@@ -40,7 +41,7 @@
       <strong>County:</strong>
       <%= @river.county_id %>
     </p>
-    <%= link_to 'Back', rivers_path %>
+    <%= link_to 'Back', rivers_by_state_path %>
   </div>
 </div>
 <div class="row">
