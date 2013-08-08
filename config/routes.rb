@@ -3,19 +3,20 @@ Flowfree::Application.routes.draw do
 
 # routes for dropdown state select on homepage
   get '/rivers/by_state/:state', to: 'rivers#index'
-  post '/rivers/by_state', to: 'rivers#index', as: 'rivers_by_state'
+  # not retrieving by state but POSTING instead
+  post '/rivers/by_state', to: 'rivers#post_to_state', as: 'rivers_by_state'
 
 # routes for search field on homepage
   get '/rivers/by_name/:search', to: 'rivers#search'
-  post '/rivers/by_name', to: 'rivers#search', as: 'rivers_by_name'
+  post '/rivers/by_name', to: 'rivers#post_to_name', as: 'rivers_by_name'
 
 # routes for user profile pages
   get '/rivers/for_user/:id', to: 'rivers#profile'
-  post '/rivers/for_user', to: 'rivers#profile', as: 'rivers_for_user'
+  post '/rivers/for_user', to: 'rivers#post_to_profile', as: 'rivers_for_user'
 
 # routes for search function within state pages
   get '/rivers/by_state_and_name/:state/:search', to: 'rivers#search'
-  post '/rivers/by_state_and_name', to: 'rivers#search', as: 'rivers_by_state_by_name'
+  post '/rivers/by_state_and_name', to: 'rivers#post_to_state_and_name', as: 'rivers_by_state_by_name'
 
   resources :rivers, :except => :index
   resources :users

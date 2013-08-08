@@ -14,7 +14,7 @@
     <p id="notice"><%= notice %></p>
     <p>
       <strong>State:</strong>
-      <%= @river.state.upcase %>
+      <%= @river.state.capitalize %>
     </p>
     <p>
       <strong>Cfs value:</strong>
@@ -31,6 +31,7 @@
     <p>
       <strong>Site code:</strong>
       <%= @river.site_code %>
+
     </p>
     <p>
       <strong>Refresh time:</strong>
@@ -40,7 +41,7 @@
       <strong>County:</strong>
       <%= @river.county_id %>
     </p>
-    <%= link_to 'Back', rivers_path %>
+    <%= link_to 'Back', rivers_by_state_path %>
   </div>
 </div>
 <div class="row">
