@@ -1,6 +1,6 @@
 class CreateRivers < ActiveRecord::Migration
   def change
-    create_table :rivers, { primary_key: :site_code } do |t|
+    create_table :rivers do |t|
       t.string :site_name
       t.string :site_code
       t.string :latitude

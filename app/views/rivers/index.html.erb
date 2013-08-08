@@ -11,8 +11,9 @@
   <div class="large-6 columns">
       <h4>Info</h4>
     <div class="state-info">
-      <p>Graphs</p>
+    <%= image_tag("http://img.scoop.it/b7qdESWpgLuV-2ZR4JzB1Tl72eJkfbmt4t8yenImKBVaiQDB_Rd1H6kmuBWtceBJ")%>
     </div>
+
   </div>
 </div>
 
@@ -55,7 +56,7 @@
             <td><%= river.county_id %></td>
             <td><%= river.cfs_value %> cfs</td>
             <td><%= link_to 'details', river %></td>
-            <td>CLICK!</td>
+            <td><%= link_to 'Follow', subscribe_path(river.site_code), method: :post %></td>
           </tr>
         <% end %>
       </tbody>

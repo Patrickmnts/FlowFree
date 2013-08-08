@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20130808201818) do
 
   create_table "subscriptions", force: true do |t|
     t.integer  "user_id"
-    t.integer  "river_id"
+    t.string   "site_code"
     t.integer  "ceiling"
     t.integer  "floor"
     t.datetime "created_at"

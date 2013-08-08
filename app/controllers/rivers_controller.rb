@@ -87,6 +87,11 @@ class RiversController < ApplicationController
     end
   end
 
+  def subscribe_to_gauge
+    Subscription.new(user_id: current_user, site_code: params[:site_code])
+    redirect_to "rivers/subscribe_to_gauge/#{params[:site_code]}"
+  end
+
   private
 
     # Use callbacks to share common setup or constraints between actions.

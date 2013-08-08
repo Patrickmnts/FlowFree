@@ -41,13 +41,15 @@
       <strong>County:</strong>
       <%= @river.county_id %>
     </p>
-    <%= link_to 'Back', rivers_by_state_path %>
+    <%= link_to 'Back', root_path %>
   </div>
 </div>
 <div class="row">
-  <div class="large-12 columns">
+  <div class="large-8 large-offset-2 columns">
     <h3>HOW ABOUT SOME SWEET GRAPHS HERE!?</h3>
-    <div id="graph"></div>
+    <div id="graph">
+      <%= image_tag("http://waterdata.usgs.gov/nwisweb/graph?agency_cd=USGS&site_no=#{@river.site_code}&parm_cd=00060&period=7", alt: "site graph for gauge number #{@river.site_code}") %>
+    </div>
   </div>
 </div>
 
