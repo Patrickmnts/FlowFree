@@ -28,8 +28,8 @@
         </div>
         <div class="large-8 columns text-right user-links">
           <% if user_signed_in? != true %>
-          <%= link_to 'Sign in', sign_in_path, class: 'button small' %><br/>
-          <%= link_to 'Register', sign_up_path, class: 'button small' %>
+            <%= link_to 'Sign in', sign_in_path, class: 'button small' %><br/>
+            <%= link_to 'Register', sign_up_path, class: 'button small' %>
           <% end %>
           <% if user_signed_in? %>
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button small' %><br/>
