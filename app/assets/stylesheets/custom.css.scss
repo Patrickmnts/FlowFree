@@ -7,17 +7,27 @@ body {
 /* HEADER STYLING!!! */
 .header {
   height: 150px;
+}
 
+.button {
+  border-radius: 8px;
+}
+
+.alert {
+  color: lightgray;
+  background-color: #2d2d2d
+}
+
+.map h2 {
+  text-align: center;
 }
 
 .header h1 {
-  margin-top: 15px;
 }
 
 .user-links {
   margin-top: 15px;
 }
-
 
 .map p {
   text-align: center;
@@ -33,10 +43,6 @@ body {
 
 .img {
   border-radius: 25px;
-}
-
-h1, h3 {
-  text-align: center;
 }
 
 .alert {
@@ -97,11 +103,16 @@ table td {
 }
 
 .active {
-  background-color: #000;
+  background-color: lightgray;
 }
 
 .searchbutton {
   border-radius: 8px;
   display: inline;
+}
+
+.profile-box {
+  width: 600px;
+  height: 400px;
 }
 

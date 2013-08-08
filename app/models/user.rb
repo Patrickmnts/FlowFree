@@ -6,7 +6,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :token_authenticatable, :timeoutable
 
-  has_many :rivers
-  before_save { |user| user.email = email.downcase }
-
 end

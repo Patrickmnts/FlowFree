@@ -26,7 +26,6 @@ end
 
 group :production do
   gem 'pg'
-  gem 'turbolinks'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
