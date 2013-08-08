@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :token_authenticatable, :timeoutable
 
+  has_many :rivers, through: :subscription
+
 end
