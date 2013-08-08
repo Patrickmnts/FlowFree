@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
+
 gem 'cancan'
 gem 'devise'
 gem 'simple_form'
@@ -19,14 +20,17 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'rspec-rails'
-  gem 'capybara'
   gem 'pry'
   gem 'awesome_print'
 end
 
+group :test do
+  gem 'selenium-webdriver'
+  gem 'capybara'
+end
+
 group :production do
   gem 'pg'
-  gem 'turbolinks'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -62,14 +66,3 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]

@@ -36,12 +36,9 @@ ActiveRecord::Schema.define(version: 20130806193357) do
     t.datetime "refresh_time"
     t.string   "latitude"
     t.string   "longitude"
-    t.string   "srs"
     t.string   "county_id"
     t.string   "cfs_value"
     t.string   "state"
-    t.datetime "time"
-    t.integer  "cfs_value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
