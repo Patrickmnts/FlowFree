@@ -4,6 +4,21 @@ body {
  background-position: relative;
 */}
 
+/* HEADER STYLING!!! */
+.header {
+  height: 150px;
+
+}
+
+.header h1 {
+  margin-top: 15px;
+}
+
+.user-links {
+  margin-top: 15px;
+}
+
+
 .map p {
   text-align: center;
 }
@@ -49,13 +64,13 @@ table td {
 
 /*STATE PROFILE PAGE STYLING!!!!*/
 .state-map {
-  width: 400px;
-  height: 400px;
-  border: 1px solid #000;
+  width: 350px;
+  height: 350px;
+  border: 2px solid #0f0f0f;
 }
 .state-info {
-  height: 250px;
-  width: 425px;
+  height: 350px;
+  width: 350px;
   border: 1px solid #000;
 }
 

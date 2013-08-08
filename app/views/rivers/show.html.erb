@@ -6,7 +6,7 @@
 <div class="row">
   <div class="large-4 large-offset-2 columns">
     <div id='square'>
-      <%= image_tag("http://maps.googleapis.com/maps/api/staticmap?center=#{@river.latitude},#{@river.longitude}&zoom=12&size=350x350&maptype=hybrid&sensor=false")%>
+      <%= image_tag("http://maps.googleapis.com/maps/api/staticmap?markers=#{@river.latitude},#{@river.longitude}&zoom=12&size=350x350&maptype=hybrid&sensor=false")%>
     </div>
   </div>
 
@@ -17,8 +17,8 @@
       <%= @river.state.capitalize %>
     </p>
     <p>
-      <strong>Cfs value:</strong>
-      <%= @river.cfs_value %>
+      <strong>CFS value:</strong>
+      <%= @river.cfs_value %> cfs
     </p>
     <p>
       <strong>Latitude:</strong>
