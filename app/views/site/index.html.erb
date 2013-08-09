@@ -1,14 +1,14 @@
 <% provide(:title, "FlowFree") %>
 <div class="row">
   <div class="large-12 columns">
-    <h3>Site Description</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quisquam, cumque excepturi vel ratione magnam saepe nobis fuga quae atque facere animi molestiae perspiciatis natus facilis consequuntur optio sapiente aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio tempora expedita enim dolore quos veniam quo. Saepe, cupiditate, deserunt error praesentium totam suscipit voluptates at itaque incidunt laborum quae officia!</p>
+    <h3>About:</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repudiandae, nesciunt, exercitationem eveniet aliquam delectus omnis voluptas dicta quis harum quam repellat earum ratione necessitatibus voluptatem deleniti ullam alias consequuntur!</p>
   </div>
 </div>
 <div class="row">
   <div class="large-10 large-offset-1 columns map">
-    <h1>Search for River Flows By State</h1>
-    <%= image_tag('us_rivers_vector.png', class: "img") %>
+    <h2>Search for River Flows By State</h2>
+    <%= image_tag('us_rivers_vector.png', alt: "us rivers vector map", class: "img") %>
   </div>
 </div>
 <div class="row">
@@ -20,10 +20,9 @@
       <% end %>
     </div>
     <%= form_tag rivers_by_name_path do %>
-      <p>
         <%= text_field_tag :search, params[:search] %>
         <%= submit_tag "Search" %>
-      </p>
       <% end %>
   </div>
 </div>
+

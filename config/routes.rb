@@ -1,6 +1,10 @@
 Flowfree::Application.routes.draw do
   devise_for :users
 
+  root to: 'site#index'
+
+  post '/rivers/subscribe_to_gauge/:site_code', to: 'rivers#subscribe_to_gauge', as: 'subscribe'
+
 # routes for dropdown state select on homepage
   get '/rivers/by_state/:state', to: 'rivers#index'
   # not retrieving by state but POSTING instead
@@ -10,23 +14,20 @@ Flowfree::Application.routes.draw do
   get '/rivers/by_name/:search', to: 'rivers#search'
   post '/rivers/by_name', to: 'rivers#post_to_name', as: 'rivers_by_name'
 
-# routes for user profile pages
-  get '/rivers/for_user/:id', to: 'rivers#profile'
-  post '/rivers/for_user', to: 'rivers#post_to_profile', as: 'rivers_for_user'
-
 # routes for search function within state pages
   get '/rivers/by_state_and_name/:state/:search', to: 'rivers#search'
   post '/rivers/by_state_and_name', to: 'rivers#post_to_state_and_name', as: 'rivers_by_state_by_name'
 
   resources :rivers, :except => :index
+
+
+# USERS ROUTES!!!!
+  get '/users/sign_in', to: 'devise/sessions#new', as: 'sign_in'
+  get '/users/sign_up', to: 'devise/registrations#new', as: 'sign_up'
+  match '/users/sign_out', to: 'devise/sessions#destroy', as: 'sign_out', via: 'delete'
+  get '/users/:id', to: 'users#show', as: 'user_profile'
+
   resources :users
-
-  root to: 'site#index'
-
-  get '/users/sign_in', to: 'devise/sessions#new'
-  get '/users/sign_up', to: 'devise/registrations#new'
-  match '/users/sign_out', to: 'devise/sessions#destroy', via: 'delete'
-  # get '/rivers/index', to: 'rivers#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

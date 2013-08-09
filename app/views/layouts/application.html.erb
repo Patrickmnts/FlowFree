@@ -24,17 +24,36 @@
     <div class="container">
       <div class="row header">
         <div class="large-4 columns text-left">
-          <h1><a href="/">FlowFree</a></h1>
+         <h1><%= link_to 'FlowFree', root_path %></h1>
         </div>
         <div class="large-8 columns text-right user-links">
-          <a href="">signup link....</a><br/>
-          <a href="">signout link....</a><br/>
-          <a href="">signin link....</a><br/>
+          <% if user_signed_in? != true %>
+            <%= link_to 'Sign in', sign_in_path, class: 'button small' %><br/>
+            <%= link_to 'Register', sign_up_path, class: 'button small' %>
+          <% end %>
+          <% if user_signed_in? %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button small' %><br/>
+            <%= link_to 'My Profile', user_profile_path(current_user), class: 'button small' %>
+          <% end %>
+          <div style="clear:both"></div>
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <% if notice %>
+            <p class="alert alert-notice"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-error"><%= alert %></p>
+          <% end %>
         </div>
       </div>
+
       <div class='YIELD'>
         <%= yield %>
       </div>
+
       <div class="row">
         <div class="large-12 columns text-right" id="footer">
           <p>Made with love @ Portland Code School</p>

@@ -24,10 +24,6 @@ class RiversController < ApplicationController
     redirect_to "/rivers/by_state_and_name/#{params[:state]}/#{params[:search]}"
   end
 
-  def post_to_user_profile
-    redirect_to "/rivers/for_user/#{params[:id]}"
-  end
-
   def search
     @rivers = River.all.paginate(:page => params[:page])
     if params[:search].present?
@@ -41,7 +37,6 @@ class RiversController < ApplicationController
 
     render :index
   end
-
 
   # GET /rivers/new
   def new
@@ -90,6 +85,11 @@ class RiversController < ApplicationController
       format.html { redirect_to rivers_url }
       format.json { head :no_content }
     end
+  end
+
+  def subscribe_to_gauge
+    Subscription.new(user_id: current_user, site_code: params[:site_code])
+    redirect_to "rivers/subscribe_to_gauge/#{params[:site_code]}"
   end
 
   private

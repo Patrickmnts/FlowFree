@@ -7,17 +7,27 @@ body {
 /* HEADER STYLING!!! */
 .header {
   height: 150px;
+}
 
+.button {
+  border-radius: 8px;
+}
+
+.alert {
+  color: lightgray;
+  background-color: #2d2d2d
+}
+
+.map h2 {
+  text-align: center;
 }
 
 .header h1 {
-  margin-top: 15px;
 }
 
 .user-links {
   margin-top: 15px;
 }
-
 
 .map p {
   text-align: center;
@@ -33,10 +43,6 @@ body {
 
 .img {
   border-radius: 25px;
-}
-
-h1, h3 {
-  text-align: center;
 }
 
 .alert {
@@ -56,9 +62,10 @@ table td {
 }
 
 #graph {
-  height: 250px;
-  width: 100%;
-  border: 1px solid #000;
+  height: 400px;
+  width: 576px;
+  border: 2px solid #0f0f0f;
+  margin-top: 15px;
 }
 
 
@@ -97,11 +104,16 @@ table td {
 }
 
 .active {
-  background-color: #000;
+  background-color: lightgray;
 }
 
 .searchbutton {
   border-radius: 8px;
   display: inline;
+}
+
+.profile-box {
+  width: 600px;
+  height: 400px;
 }
 

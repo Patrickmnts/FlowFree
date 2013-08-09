@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130806193357) do
+ActiveRecord::Schema.define(version: 20130808201818) do
 
   create_table "logs", force: true do |t|
     t.text     "message"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 20130806193357) do
   end
 
   add_index "rivers", ["site_code"], name: "index_rivers_on_site_code", unique: true
+
+  create_table "subscriptions", force: true do |t|
+    t.integer  "user_id"
+    t.string   "site_code"
+    t.integer  "ceiling"
+    t.integer  "floor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

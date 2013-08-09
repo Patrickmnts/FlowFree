@@ -1,5 +1,7 @@
 class River < ActiveRecord::Base
   include RiversHelper
+  has_many :users, through: :subscription
+
 
   def state
     full_name(self[:state])
