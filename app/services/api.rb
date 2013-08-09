@@ -24,11 +24,9 @@ class Api
   end
 
   def self.get_api(state)
-    begin
-      HTTParty.get("http://waterservices.usgs.gov/nwis/iv/?format=json&stateCd=#{state}&parameterCd=00060")
-    rescue
-      Log.create(message: "Error pulling API at #{Time.now}. Likely network related.")
-    end
+    HTTParty.get("http://waterservices.usgs.gov/nwis/iv/?format=json&stateCd=#{state}&parameterCd=00060")
+  rescue
+    Log.create(message: "Error pulling API at #{Time.now}. Likely network related.")
   end
 
   def self.error?(sanitized)
