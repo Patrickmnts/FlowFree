@@ -33,6 +33,27 @@ body {
   text-align: center;
 }
 
+.center-iframe {
+  margin: 0 auto;
+  display:block;
+}
+
+#googft-mapCanvas {
+  height: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 750px;
+}
+
+#googft-mapCanvas img{
+  max-width:none;
+  padding: 20px;
+  }
+
+#state-drop-dwn {
+  padding-top: 15px;
+}
+
 .state_list {
   margin-top: 10px;
 }
@@ -117,3 +138,21 @@ table td {
   height: 400px;
 }
 
+/* RIVER SHOW PAGE STYLING*/
+
+#state-show h2,h3,h4 {
+  text-align: center;
+}
+
+#state-show h3 {
+  padding-bottom: 20px;
+}
+
+#state-show h2 {
+  margin-bottom: 2px;
+}
+
+#state-show img {
+  margin: 0 auto;
+  display:block;
+}
