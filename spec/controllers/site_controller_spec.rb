@@ -20,15 +20,27 @@ describe "Site pages" do
     end
     it "should go to rivers page of Arizona" do
       visit '/'
-      select("Arizona", :from => "state")
+      select('Arizona', :from => 'state')
       click_button 'Go!'
       current_path.should == '/rivers/by_state/az'
     end
     it "should go to rivers page of Oregon" do
       visit '/'
-      select("Oregon", :from => "state")
+      select('Oregon', :from => 'state')
       click_button 'Go!'
       current_path.should == '/rivers/by_state/or'
+    end
+    it "should go to rivers page of chosen river" do
+      visit '/'
+      fill_in 'search', :with => "Willamette"
+      click_button 'Search'
+      current_path.should == '/rivers/by_name/Willamette'
+    end
+    it "should go to rivers page of chosen river" do
+      visit '/'
+      fill_in 'search', :with => "Mississippi"
+      click_button 'Search'
+      current_path.should == '/rivers/by_name/Mississippi'
     end
   end
 end
