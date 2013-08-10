@@ -43,4 +43,7 @@ describe "Site pages" do
       current_path.should == '/rivers/by_name/Mississippi'
     end
   end
+  describe "Register page" do
+      it "should "
+  end
 end
