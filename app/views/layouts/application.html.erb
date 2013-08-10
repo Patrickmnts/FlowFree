@@ -26,7 +26,8 @@
         var map = new google.maps.Map(document.getElementById('googft-mapCanvas'), {
           center: new google.maps.LatLng(38.8282, -97.5795),
           zoom: 4,
-          mapTypeId: google.maps.MapTypeId.HYBRID
+          mapTypeId: google.maps.MapTypeId.HYBRID,
+          scrollwheel: false
         });
 
         layer = new google.maps.FusionTablesLayer({
