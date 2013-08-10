@@ -1,5 +1,7 @@
 <!-- BEGINNING TO START A TEMPLATE FOR SEARCH FUNCTIONS TO DISPLAY BETTER TITLE 11:38 7/7 -->
-
+<% content_for :title do %>
+  Sites Matching '<%= params[:search] %>'
+<% end %>
 <div class="row">
   <div class="span10 offset1 text-center">
     <h2><%= @rivers.first.name %></h2>
