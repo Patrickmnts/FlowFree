@@ -9,8 +9,8 @@ body {
   height: 150px;
 }
 
-.button {
-  border-radius: 8px;
+.button-group {
+  padding-top: 13px;
 }
 
 .alert {
@@ -42,7 +42,7 @@ body {
   height: 450px;
   margin: 0 auto;
   padding: 20px;
-  width: 750px;
+  width: 100%;
 }
 
 #googft-mapCanvas img{
@@ -140,16 +140,15 @@ table td {
 
 /* RIVER SHOW PAGE STYLING*/
 
-#state-show h2,h3,h4 {
-  text-align: center;
-}
 
 #state-show h3 {
   padding-bottom: 20px;
+  text-align: center;
 }
 
 #state-show h2 {
   margin-bottom: 2px;
+  text-align: center;
 }
 
 #state-show img {
