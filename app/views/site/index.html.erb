@@ -1,13 +1,13 @@
 <% provide(:title, "FlowFree") %>
 <div class="row">
   <div class="large-12 columns">
+    <h2>Search All Surface Water Flows in the USA</h2>
     <h3>About:</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repudiandae, nesciunt, exercitationem eveniet aliquam delectus omnis voluptas dicta quis harum quam repellat earum ratione necessitatibus voluptatem deleniti ullam alias consequuntur!</p>
   </div>
 </div>
 <div class="row">
   <div class="large-10 large-offset-1 columns map">
-    <h2>Search All Surface Water Flows in the USA</h2>
   </div>
 </div>
 <div class="row">
@@ -20,12 +20,12 @@
    <div id='state-drop-dwn'>
       <%= form_tag rivers_by_state_path do %>
         <%= select_tag :state, options_for_select(us_states), :prompt => 'Select A State' %>
-        <%= submit_tag "Go!" %>
+        <%= submit_tag "Go!", class: 'small button' %>
       <% end %>
     </div>
     <%= form_tag rivers_by_name_path do %>
         <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search" %>
+        <%= submit_tag "Search", class: 'small button' %>
       <% end %>
   </div>
 </div>

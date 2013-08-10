@@ -9,13 +9,21 @@ body {
   height: 150px;
 }
 
+.banner-link {
+  font-family: Ariel;
+}
+
+h2 {
+  text-align: center;
+}
+
 .button {
   border-radius: 8px;
 }
 
 .alert {
-  color: lightgray;
-  background-color: #2d2d2d
+  color: blue;
+  background-color: #ededed;
 }
 
 .map h2 {
@@ -57,9 +65,9 @@ body {
 .state_list {
   margin-top: 10px;
 }
+
 #list {
   margin-top: 10px;
-
 }
 
 .img {
