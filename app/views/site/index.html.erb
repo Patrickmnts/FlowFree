@@ -11,10 +11,10 @@
     <%= image_tag("http://placehold.it/400x300&text=[img]") %>
   </div>
   <div class="large-8 columns">
-    <h4>This is a content section.</h4>
+    <h4>Search current flow of all water sites in the USA</h4>
       <div class="row">
         <div class="large-6 columns">
-          <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+          <p>Explore individual site details through the map above, or use the menus at right to browse all the sites in a state or perform a nationwide search.</p>
         </div>
         <div class="large-6 columns">
           <div id='state-drop-dwn'>
@@ -22,6 +22,10 @@
               <%= select_tag :state, options_for_select(us_states), :prompt => 'Select A State' %>
               <%= submit_tag "Go!" %>
             <% end %>
+            <%= form_tag rivers_by_name_path do %>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "Search" %>
+           <% end %>
           </div>
         </div>
       </div>
@@ -32,10 +36,7 @@
     <h4>This is a content section.</h4>
       <div class="row">
         <div class="large-6 columns">
-           <%= form_tag rivers_by_name_path do %>
-              <%= text_field_tag :search, params[:search] %>
-              <%= submit_tag "Search" %>
-           <% end %>
+          <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
         </div>
         <div class="large-6 columns">
           <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
