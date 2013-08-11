@@ -12,6 +12,9 @@
 
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
 
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
@@ -52,18 +55,19 @@
   </head>
 
   <body>
+    <div class="container">
       <div class="row">
         <div class="large-3 columns text-left">
-         <h1><%= link_to 'FlowFree', root_path %></h1>
+         <h1><%= link_to 'FlowFree', root_path, class: 'brand' %></h1>
         </div>
         <div class="large-9 columns">
           <ul class="button-group right">
             <% if user_signed_in? != true %>
-              <li><%= link_to 'Sign in', sign_in_path, class: 'button' %></li>
+              <li><%= link_to 'Sign In', sign_in_path, class: 'button' %></li>
               <li><%= link_to 'Register', sign_up_path, class: 'button' %></li>
             <% end %>
             <% if user_signed_in? %>
-              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button' %></li>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'button' %></li>
               <li><%= link_to 'My Profile', user_profile_path(current_user), class: 'button' %></li>
             <% end %>
           </ul>
@@ -90,10 +94,10 @@
           <hr />
           <div class="row">
             <div class="large-6 columns">
-              <p>&copy; Made with love @ Portland Code School</p>
+              <p>&copy; Made with love at Portland Code School</p>
             </div>
             <div class="large-6 columns">
-              <ul class="inline-list right">
+              <ul class="inline-list right footer-link">
                 <% if user_signed_in? != true %>
                   <li><%= link_to 'Sign in', sign_in_path %></li>
                   <li><%= link_to 'Register', sign_up_path %></li>
@@ -109,5 +113,6 @@
       </footer>
 
     <%= javascript_include_tag "application" %>
+  </div>
   </body>
 </html>

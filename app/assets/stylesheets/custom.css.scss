@@ -1,16 +1,54 @@
 body {
-/* background-image: asset-data-url('river-background.png');
- background-repeat: no-repeat;
- background-position: relative;
-*/}
+ background-image: url('http://farm4.staticflickr.com/3244/2600917906_600185065c_o.jpg');
+ background-repeat: repeat;
+ background-position: absolute;
+ font-family: "PT Sans Narrow";
+}
+
+body p {
+ font-size: 18px;
+ line-height: 23px;
+ color: #1B2D3F;
+}
+
+
+div.content {
+  background-color: #92ACBE;
+  padding: 18px 0;
+}
+
+h1,h2,h3,h4 {
+  font-family: "Oswald";
+  color: #1B2D3F;
+}
 
 /* HEADER STYLING!!! */
 .header {
   height: 150px;
 }
 
+a.brand {
+  font-family: 'Permanent Marker', cursive;
+  color: #FFF;
+  text-shadow: 2px 2px 7px rgba(27, 45, 63, 1);
+  &:hover {
+    color: #FFF;
+    text-shadow: 2px 2px 7px rgba(59, 88, 114, 1);
+  }
+}
+
+
 .button-group {
-  padding-top: 13px;
+  padding-top: 23px;
+}
+
+a.button {
+  background-color:#3B5872;
+  border-color: #BED1D8;
+  font-family: "Oswald";
+  &:hover {
+    background-color: #1B2D3F;
+  }
 }
 
 .alert {
@@ -33,10 +71,6 @@ body {
   text-align: center;
 }
 
-.center-iframe {
-  margin: 0 auto;
-  display:block;
-}
 
 #googft-mapCanvas {
   height: 450px;
@@ -49,10 +83,6 @@ body {
   max-width:none;
   padding: 20px;
   }
-
-#state-drop-dwn {
-  padding-top: 15px;
-}
 
 .state_list {
   margin-top: 10px;
@@ -70,9 +100,8 @@ body {
   color: white;
 }
 
-.footer {
-  text-align: right;
-  height: 70px;
+.footer-link a {
+  color: #FFF;
 }
 
 table td {
@@ -154,4 +183,10 @@ table td {
 #state-show img {
   margin: 0 auto;
   display:block;
+}
+
+
+.container {
+  max-width: 968px;
+  margin: 0 auto;
 }
