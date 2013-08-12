@@ -43,6 +43,7 @@ div.content2 {
   background-color: #92ACBE;
   padding: 13px 13px;
   max-width: 938px;
+  box-shadow: 0 0 13px rgba(27, 45, 63, 1);
 }
 
 div.content-row2 {
@@ -56,6 +57,10 @@ div.content-row2 {
 .content-img {
   border: 1px solid #1B2D3F;
   box-shadow: 2px 2px 10px rgba(27, 45, 63, 1);
+}
+
+.edit-profile-page label, .edit-profile-page label.required {
+  color: #1B2D3F;
 }
 
 a.brand {
