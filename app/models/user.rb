@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :token_authenticatable, :timeoutable
 
-  has_many :rivers, through: :subscription
+  has_many :rivers,
+           :through => "subscriptions",
+           :foreign_key => "site_code"
 
 end

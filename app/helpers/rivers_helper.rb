@@ -166,4 +166,8 @@ module RiversHelper
   def markers_for_static_map(rivers)
     rivers.map { |river| river.latitude + ',' + river.longitude }.join('|')
   end
+
+  def markers_for_profile_map(subscriptions)
+    subscriptions.map { |subscription| subscription.river.latitude + ',' + subscription.river.longitude }.join('|')
+  end
 end

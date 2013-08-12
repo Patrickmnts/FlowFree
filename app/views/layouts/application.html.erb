@@ -37,13 +37,13 @@
           map: map,
           heatmap: { enabled: false },
           query: {
-            select: "col1",
+            select: "col3",
             from: "1IUTYCJ2oJko4KSiNcFbcwPeEkUHkTyETih1s-WM",
             where: ""
           },
           options: {
-            styleId: 2,
-            templateId: 2
+            styleId: 3,
+            templateId: 3
           }
         });
       }
@@ -67,8 +67,8 @@
               <li><%= link_to 'Register', sign_up_path, class: 'button' %></li>
             <% end %>
             <% if user_signed_in? %>
-              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'button' %></li>
               <li><%= link_to 'My Profile', user_profile_path(current_user), class: 'button' %></li>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'button' %></li>
             <% end %>
           </ul>
         </div>
@@ -94,7 +94,7 @@
           <hr />
           <div class="row">
             <div class="large-6 columns footer-link">
-              <%= link_to "&copy; Made with love at Portland Code School".html_safe, 'http://www.portlandcodeschool.com' %>
+              <%= link_to "&copy; Made with love at Portland Code School :)".html_safe, 'http://www.portlandcodeschool.com' %>
 
             </div>
             <div class="large-6 columns">
@@ -104,8 +104,9 @@
                   <li><%= link_to 'Register', sign_up_path %></li>
                 <% end %>
                 <% if user_signed_in? %>
-                  <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
                   <li><%= link_to 'My Profile', user_profile_path(current_user) %></li>
+                  <li><%= link_to "Edit Profile", edit_user_registration_path(current_user) %></li>
+                  <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
                 <% end %>
               </ul>
             </div>
