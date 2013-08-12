@@ -21,11 +21,11 @@
           <div id='state-drop-dwn'>
             <%= form_tag rivers_by_state_path do %>
               <%= select_tag :state, options_for_select(us_states), :prompt => 'Select A State' %>
-              <%= submit_tag "Go!" %>
+              <%= submit_tag "Go!", class: 'button small' %>
             <% end %>
             <%= form_tag rivers_by_name_path do %>
               <%= text_field_tag :search, params[:search], :placeholder => 'Search the nation...' %>
-              <%= submit_tag "Search" %>
+              <%= submit_tag "Search", class: 'button small' %>
            <% end %>
           </div>
         </div>

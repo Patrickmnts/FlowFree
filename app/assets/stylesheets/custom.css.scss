@@ -63,7 +63,6 @@ a.brand {
   }
 }
 
-
 .button-group {
   padding-top: 27px;
 }
@@ -179,13 +178,14 @@ footer p {
 table {
   background: #92ACBE;
   margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.4em;
 }
-
 
 table td {
   border: 1px solid #030303;
   margin: 0;
-  padding: 10px;
+  padding: 8px;
   width: auto;
 }
 
