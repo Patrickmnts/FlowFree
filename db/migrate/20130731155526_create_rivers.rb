@@ -1,7 +1,7 @@
 class CreateRivers < ActiveRecord::Migration
   def change
     create_table :rivers, :id => false do |t|
-      t.integer :site_code, :options => 'PRIMARY KEY'
+      t.string :site_code, :options => 'PRIMARY KEY'
       t.string :site_name
       t.string :latitude
       t.string :longitude
