@@ -67,8 +67,8 @@
               <li><%= link_to 'Register', sign_up_path, class: 'button' %></li>
             <% end %>
             <% if user_signed_in? %>
-              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'button' %></li>
               <li><%= link_to 'My Profile', user_profile_path(current_user), class: 'button' %></li>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'button' %></li>
             <% end %>
           </ul>
         </div>
