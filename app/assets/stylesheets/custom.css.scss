@@ -1,5 +1,5 @@
 body {
- background-image: image-url('river.jpg');
+ background-image: image-url('river1440.jpg');
  background-repeat: repeat;
  background-position: absolute;
  font-family: "PT Sans Narrow";
@@ -33,6 +33,10 @@ h1,h2,h3,h4 {
   color: #1B2D3F;
 }
 
+h1 {
+  font-size: 3em;
+}
+
 /* HEADER STYLING!!! */
 .header {
   height: 150px;
@@ -50,7 +54,7 @@ a.brand {
 
 
 .button-group {
-  padding-top: 23px;
+  padding-top: 27px;
 }
 
 .button {
@@ -60,6 +64,22 @@ a.brand {
   &:hover {
     background-color: #1B2D3F;
   }
+}
+
+#register-button {
+  border-radius: 8px;
+  font-family: 'Permanent Marker', cursive;
+  background-color:#1B2D3F;
+  margin-bottom: 0px;
+  margin-top: 3px;
+  &:hover {
+    background-color: #3B5872;
+  }
+
+}
+
+#register {
+  text-align: center;
 }
 
 .alert {
@@ -117,14 +137,15 @@ a.brand {
 
 .footer-link a {
   color: #FFF;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-table td {
-  border: 1px solid #030303;
-  margin: 0;
-  padding: 3px;
-  width: 100%;
+footer p {
+  color: #BED1D8;
 }
+
 
 #graph {
   height: 400px;
@@ -154,6 +175,16 @@ table {
   background: #92ACBE;
 }
 
+table td {
+  border: 1px solid #030303;
+  margin: 0;
+  padding: 3px;
+  width: 100%;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
 table tr th, table tr td {
   color: #1B2D3F;
 }
@@ -171,23 +202,6 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
   background: #BED1D8;
 }
 
-/*.pagination li {
-  list-style: none;
-  display: inline;
-  margin: 0 auto;
-  padding: 7px;
-  background-color: #2ba6cb;
-  border-radius: 60px;
-    &a {
-      color: #FFF;
-      padding: 10px;
-      border-radius: 60px;
-    &:hover {
-      background-color: white;
-      color: #3B5872;
-    }
-  }
-}*/
 
 .pagination a {
   color: #FFF;
