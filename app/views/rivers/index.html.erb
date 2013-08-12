@@ -60,7 +60,9 @@
           <th>Latitude</th>
           <th>Longitude</th>
           <th>More info</th>
-          <th>Follow</th>
+          <% if user_signed_in? %>
+            <th>Follow</th>
+          <% end %>
         </tr>
       </thead>
 
@@ -74,7 +76,9 @@
             <td><%= river.latitude %></td>
             <td><%= river.longitude %></td>
             <td><%= link_to 'Details', river %></td>
-            <td><%= link_to 'Follow', subscribe_path(river.site_code), method: :post %></td>
+            <% if user_signed_in? %>
+              <td><%= link_to 'Follow', subscribe_path(river.site_code), method: :post %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>
