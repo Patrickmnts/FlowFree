@@ -77,7 +77,7 @@
             <td><%= river.longitude %></td>
             <td><%= link_to 'Details', river %></td>
             <% if user_signed_in? %>
-              <td><%= link_to 'Follow', subscribe_path(river.site_code), method: :post %></td>
+              <td><%= link_to 'Follow', subscribe_path(river.site_code), method: :post, class: 'button tiny' %></td>
             <% end %>
           </tr>
         <% end %>

@@ -44,6 +44,11 @@
       <strong>County:</strong>
       <%= @river.county_id %>
     </p>
+    <p>
+      <% if user_signed_in? %>
+      <%= link_to 'Follow', subscribe_path(@river.site_code), method: :post, class: 'button tiny' %>
+      <% end %>
+    </p>
   </div>
 <!--
   <div class="large-6 columns">
