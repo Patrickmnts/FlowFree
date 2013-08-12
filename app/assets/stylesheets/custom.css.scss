@@ -1,3 +1,8 @@
+.container {
+  max-width: 968px;
+  margin: 0 auto;
+}
+
 body {
  background-image: image-url('river1440.jpg');
  background-repeat: repeat;
@@ -166,6 +171,7 @@ footer p {
   height: 350px;
   border: 2px solid #0f0f0f;
 }
+
 .state-info {
   height: 350px;
   width: 350px;
@@ -179,6 +185,7 @@ footer p {
 table {
   background: #92ACBE;
 }
+
 
 table td {
   border: 1px solid #030303;
@@ -210,7 +217,7 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
 
 .pagination a {
   color: #FFF;
-  &:hover{
+  &:hover {
     color: #3B5872;
   }
 }
@@ -250,7 +257,4 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
   display:block;
 }
 
-.container {
-  max-width: 968px;
-  margin: 0 auto;
 }
