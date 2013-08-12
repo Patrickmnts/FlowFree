@@ -12,6 +12,9 @@
 
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
 
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
@@ -53,22 +56,29 @@
 
   <body>
     <div class="container">
+<<<<<<< HEAD
       <div class="row header">
         <div class="large-4 columns text-left">
          <h1><%= link_to 'FlowFree', root_path, class: 'banner-link' %></h1>
+=======
+      <div class="row">
+        <div class="large-3 columns text-left">
+         <h1><%= link_to 'FlowFree', root_path, class: 'brand' %></h1>
+>>>>>>> ed072172d75a88df184fbf5bf1383127c11bc964
         </div>
-        <div class="large-8 columns text-right user-links">
-          <% if user_signed_in? != true %>
-            <%= link_to 'Sign in', sign_in_path, class: 'button small' %><br/>
-            <%= link_to 'Register', sign_up_path, class: 'button small' %>
-          <% end %>
-          <% if user_signed_in? %>
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button small' %><br/>
-            <%= link_to 'My Profile', user_profile_path(current_user), class: 'button small' %>
-          <% end %>
-          <div style="clear:both"></div>
-          </div>
+        <div class="large-9 columns">
+          <ul class="button-group right">
+            <% if user_signed_in? != true %>
+              <li><%= link_to 'Sign In', sign_in_path, class: 'button' %></li>
+              <li><%= link_to 'Register', sign_up_path, class: 'button' %></li>
+            <% end %>
+            <% if user_signed_in? %>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'button' %></li>
+              <li><%= link_to 'My Profile', user_profile_path(current_user), class: 'button' %></li>
+            <% end %>
+          </ul>
         </div>
+      </div>
 
       <div class="row">
         <div class="large-12 columns">
@@ -85,13 +95,31 @@
         <%= yield %>
       </div>
 
-      <div class="row">
-        <div class="large-12 columns text-right" id="footer">
-          <p>Made with love @ Portland Code School</p>
+      <footer class="row">
+        <div class="large-12 columns">
+          <hr />
+          <div class="row">
+            <div class="large-6 columns footer-link">
+              <%= link_to "&copy; Made with love at Portland Code School".html_safe, 'http://www.portlandcodeschool.com' %>
+
+            </div>
+            <div class="large-6 columns">
+              <ul class="inline-list right footer-link">
+                <% if user_signed_in? != true %>
+                  <li><%= link_to 'Sign in', sign_in_path %></li>
+                  <li><%= link_to 'Register', sign_up_path %></li>
+                <% end %>
+                <% if user_signed_in? %>
+                  <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+                  <li><%= link_to 'My Profile', user_profile_path(current_user) %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </footer>
 
     <%= javascript_include_tag "application" %>
+  </div>
   </body>
 </html>
