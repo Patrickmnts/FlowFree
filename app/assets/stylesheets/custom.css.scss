@@ -260,3 +260,8 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
   max-width: 968px;
   margin: 0 auto;
 }
+
+.narrow-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
