@@ -1,32 +1,53 @@
 <% provide(:title, "FlowFree") %>
+
 <div class="row">
   <div class="large-12 columns">
-    <h3>About:</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repudiandae, nesciunt, exercitationem eveniet aliquam delectus omnis voluptas dicta quis harum quam repellat earum ratione necessitatibus voluptatem deleniti ullam alias consequuntur!</p>
+    <div id="googft-mapCanvas"></div>
+    <hr>
   </div>
 </div>
-<div class="row">
-  <div class="large-10 large-offset-1 columns map">
-    <h2>Search for River Flows By State</h2>
-    <iframe width="750" height="450" scrolling="no" frameborder="no" src="https://www.google.com/fusiontables/embedviz?q=select+col1+from+1IUTYCJ2oJko4KSiNcFbcwPeEkUHkTyETih1s-WM&amp;viz=MAP&amp;h=false&amp;lat=40.95896879515698&amp;lng=-104.22611730859921&amp;t=1&amp;z=4&amp;l=col1&amp;y=2&amp;tmplt=2&amp;hml=TWO_COL_LAT_LNG">
-      <head>
-      <base target="_parent">
-      </head>
-    </iframe>
+<div class="container">
+<div class="row content">
+  <div class="large-4 columns">
+    <%= image_tag("http://placehold.it/400x300&text=[img]") %>
   </div>
-</div>
-<div class="row">
-  <div class="large-4 large-offset-4 columns">
-   <div id='state-drop-dwn'>
-      <%= form_tag rivers_by_state_path do %>
-        <%= select_tag :state, options_for_select(us_states), :prompt => 'Select A State' %>
-        <%= submit_tag "Go!" %>
-      <% end %>
+  <div class="large-8 columns">
+    <h4>Search current flows of all rivers and streams in the USA</h4>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>Explore current conditions of any individual site in the country through the map above, or use the menus at right to browse all the sites in a state or perform a nationwide search of site names. Restrict your search to only one state on the individual state pages.</p>
+        </div>
+        <div class="large-6 columns">
+          <div id='state-drop-dwn'>
+            <%= form_tag rivers_by_state_path do %>
+              <%= select_tag :state, options_for_select(us_states), :prompt => 'Select A State' %>
+              <%= submit_tag "Go!" %>
+            <% end %>
+            <%= form_tag rivers_by_name_path do %>
+              <%= text_field_tag :search, params[:search], :placeholder => 'Search the nation...' %>
+              <%= submit_tag "Search" %>
+           <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  <div class="row content">
+    <div class="large-8 columns">
+      <h4>Create your own personalized gauge page</h4>
+        <div class="row">
+          <div class="large-6 columns">
+            <p>Sign up for FreeFlow and get your own personal gauge table!</p>
+            <div id="register"><%= link_to 'Register Now!', sign_up_path, :class => 'button large', :id => 'register-button' %></div>
+          </div>
+          <div class="large-6 columns">
+            <p>Easily follow all the gauges on all the rivers that matter to you! Have them all displayed in one handy table whenever you sign in! Even get email updates when flows rise or fall above a discharge level set by you! Always know your favorite flows!</p>
+          </div>
+        </div>
     </div>
-    <%= form_tag rivers_by_name_path do %>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search" %>
-      <% end %>
+    <div class="large-4 columns">
+      <%= image_tag("http://placehold.it/400x300&text=[img]") %>
+    </div>
   </div>
 </div>
 

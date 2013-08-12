@@ -1,6 +1,9 @@
+<% content_for :title do %>
+  Sign In
+<% end %>
 <div class="row">
-  <div class="large-6 large-offset-3 columns">
-    <h2>Sign in</h2>
+  <div class="large-6 large-offset-3 content2 columns">
+    <h2>Sign In</h2>
 
     <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
@@ -11,7 +14,7 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign in" %>
+        <%= f.button :submit, "Sign In" %>
       </div>
 
     <% end %>
