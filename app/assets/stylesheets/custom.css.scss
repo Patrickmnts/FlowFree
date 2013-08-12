@@ -24,6 +24,12 @@ div.content {
   max-width: 938px;
 }
 
+div.content2 {
+  background-color: #92ACBE;
+  padding: 13px 13px;
+  max-width: 938px;
+}
+
 .content p {
   text-align: justify;
 }
@@ -45,7 +51,11 @@ h1 {
 a.brand {
   font-family: 'Permanent Marker', cursive;
   color: #FFF;
-  text-shadow: 2px 2px 7px rgba(27, 45, 63, 1);
+  text-shadow: 2px 2px 10px rgba(27, 45, 63, 1);
+  -moz-transition: text-shadow 200ms ease-out;
+  -webkit-transition: text-shadow 200ms ease-out;
+  -o-transition: text-shadow 200ms ease-out;
+  transition: text-shadow 200ms ease-out;
   &:hover {
     color: #FFF;
     text-shadow: 2px 2px 7px rgba(59, 88, 114, 1);
@@ -136,8 +146,9 @@ a.brand {
 }
 
 .footer-link a {
-  color: #FFF;
+  color: #1B2D3F;
   &:hover {
+    color: #FFF;
     text-decoration: underline;
   }
 }
@@ -251,5 +262,10 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
 
 .container {
   max-width: 968px;
+  margin: 0 auto;
+}
+
+.narrow-container {
+  max-width: 700px;
   margin: 0 auto;
 }
