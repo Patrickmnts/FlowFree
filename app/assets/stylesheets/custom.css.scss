@@ -35,7 +35,7 @@ h1 {
 
 div.content {
   background-color: #92ACBE;
-  padding: 13px 0;
+  padding: 16px 0;
   max-width: 938px;
 }
 
@@ -45,8 +45,17 @@ div.content2 {
   max-width: 938px;
 }
 
+div.content-row2 {
+  padding: 0;
+}
+
 .content p {
   text-align: justify;
+}
+
+.content-img {
+  border: 1px solid #1B2D3F;
+  box-shadow: 2px 2px 10px rgba(27, 45, 63, 1);
 }
 
 a.brand {
@@ -142,6 +151,14 @@ p.alert {
 
 #state-drop-dwn {
   margin-top: 3px;
+}
+
+#state-drop-dwn form {
+  margin: 0;
+}
+
+#state-drop-dwn .button {
+  margin: 0 0 1em;
 }
 
 
