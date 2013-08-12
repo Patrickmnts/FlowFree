@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @subscriptions = Subscription.joins(:users, :rivers).where("user_id = ?", params[:id])
+    @subscriptions = Subscription.joins(:river).where("user_id = ?", params[:id])
   end
 
 
