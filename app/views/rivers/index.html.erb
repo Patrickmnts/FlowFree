@@ -71,7 +71,7 @@
             <td><%= river.longitude %></td>
             <td><%= river.county_id %></td>
             <td><%= river.cfs_value %> cfs</td>
-            <td><%= link_to 'details', river %></td>
+            <td><%= link_to 'Details', river %></td>
             <td><%= link_to 'Follow', subscribe_path(river.site_code), method: :post %></td>
           </tr>
         <% end %>

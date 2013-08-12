@@ -1,5 +1,5 @@
 body {
- background-image: url('http://farm4.staticflickr.com/3244/2600917906_600185065c_o.jpg');
+ background-image: image-url('river.jpg');
  background-repeat: repeat;
  background-position: absolute;
  font-family: "PT Sans Narrow";
@@ -11,10 +11,21 @@ body p {
  color: #1B2D3F;
 }
 
+a {
+  color: #3B5872;
+  &:hover {
+    color: #1B2D3F;
+  }
+}
 
 div.content {
   background-color: #92ACBE;
-  padding: 18px 0;
+  padding: 13px 0;
+  max-width: 938px;
+}
+
+.content p {
+  text-align: justify;
 }
 
 h1,h2,h3,h4 {
@@ -42,7 +53,7 @@ a.brand {
   padding-top: 23px;
 }
 
-a.button {
+.button {
   background-color:#3B5872;
   border-color: #BED1D8;
   font-family: "Oswald";
@@ -92,6 +103,10 @@ a.button {
 
 }
 
+#state-drop-dwn {
+  margin-top: 3px;
+}
+
 .img {
   border-radius: 25px;
 }
@@ -135,22 +150,54 @@ table td {
   margin-top: 20px;
 }
 
-.pagination li {
+table {
+  background: #92ACBE;
+}
+
+table tr th, table tr td {
+  color: #1B2D3F;
+}
+
+table tbody tr td {
+  line-height: 1em;
+}
+
+table thead tr th {
+  background: #6D8BA7;
+  color: #1B2D3F;
+}
+
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+  background: #BED1D8;
+}
+
+/*.pagination li {
   list-style: none;
   display: inline;
   margin: 0 auto;
   padding: 7px;
   background-color: #2ba6cb;
   border-radius: 60px;
-    a {
-      color: #0F0F0F;
+    &a {
+      color: #FFF;
       padding: 10px;
       border-radius: 60px;
     &:hover {
       background-color: white;
-      color: #0f0f0f;
+      color: #3B5872;
     }
   }
+}*/
+
+.pagination a {
+  color: #FFF;
+  &:hover{
+    color: #3B5872;
+  }
+}
+
+.current {
+  color: #1B2D3F;
 }
 
 .active {
@@ -184,6 +231,8 @@ table td {
   margin: 0 auto;
   display:block;
 }
+
+
 
 
 .container {
