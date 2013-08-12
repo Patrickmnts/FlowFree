@@ -3,9 +3,9 @@
     Sites in <%= params[:state].upcase %> that match: '<%= params[:search] %>'
   <% end %>
   <% if params[:state] != nil && params[:search] == nil %>
-  Rivers in <%= params[:state].upcase %>
+    Sites in <%= params[:state].upcase %>
   <% elsif params[:search] != nil && params[:state] == nil %>
-  Rivers Matching '<%= params[:search] %>'
+    Sites Matching '<%= params[:search] %>'
   <% end %>
 <% end %>
 <div class="row">
@@ -33,8 +33,9 @@
       <h4>Sites in <%= params[:state].upcase %> that match: '<%= params[:search] %>' </h4>
     <% end %>
     <% if params[:state] != nil && params[:search] == nil %>
+      <h4>Sites in <%= params[:state].upcase %></h4>
       <%= form_tag rivers_by_state_by_name_path do %>
-      <%= text_field_tag :search, params[:search], :placeholder => "Search #{params[:state].upcase} rivers here..." %>
+      <%= text_field_tag :search, params[:search], :placeholder => "Search #{params[:state].upcase} sites here..." %>
       <%= hidden_field_tag :state, params[:state] %>
         <%= submit_tag "Search", :name => nil, class: 'small button searchbutton' %>
       <% end %>
