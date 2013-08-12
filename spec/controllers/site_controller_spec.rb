@@ -45,5 +45,9 @@ describe "Site pages" do
   end
   describe "Register page" do
       it "should "
+      fill_in 'user_name', :with => 'Abc Xyz'
+      fill_in 'user_password', :with => 'prasad'
+      fill_in 'user_password_confirmation', :with => 'prasad'
+
   end
 end
