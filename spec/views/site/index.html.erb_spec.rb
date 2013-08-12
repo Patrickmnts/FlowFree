@@ -5,17 +5,17 @@ describe "Home page" do
     visit '/'
     expect(page).to have_title('FlowFree')
   end
-  it "should have a h2 header 'Search for...'" do
+  it "should have content 'Search for...'" do
     visit '/'
-    expect(page).to have_selector('h2', :text => "Search for River Flows By State")
+    expect(page).to have_content("Search current flows")
   end
-  it "should have a register button" do
-    visit '/'
-    expect(page).to have_link('Register')
-  end
+  # it "should have a register button" do
+  #   visit '/'
+  #   expect(page).to have_link('Register')
+  # end
   it "should have a sign-in button" do
     visit '/'
-    expect(page).to have_link('Sign in')
+    expect(page).to have_link('Sign In')
   end
   it "should have a drop-down menu of states" do
     visit '/'
