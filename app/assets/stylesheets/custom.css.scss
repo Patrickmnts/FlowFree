@@ -5,9 +5,10 @@
 
 body {
  background-image: image-url('river1680.jpg');
- background-repeat: repeat;
- background-position: absolute;
  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-attachment: fixed;
 }
 
 body p {
@@ -34,7 +35,7 @@ h1 {
 
 div.content {
   background-color: #92ACBE;
-  padding: 13px 0;
+  padding: 16px 0;
   max-width: 938px;
 }
 
@@ -42,10 +43,24 @@ div.content2 {
   background-color: #92ACBE;
   padding: 13px 13px;
   max-width: 938px;
+  box-shadow: 0 0 13px rgba(27, 45, 63, 1);
+}
+
+div.content-row2 {
+  padding: 0;
 }
 
 .content p {
   text-align: justify;
+}
+
+.content-img {
+  border: 1px solid #1B2D3F;
+  box-shadow: 2px 2px 10px rgba(27, 45, 63, 1);
+}
+
+.edit-profile-page label, .edit-profile-page label.required {
+  color: #1B2D3F;
 }
 
 a.brand {
@@ -61,7 +76,6 @@ a.brand {
     text-shadow: 2px 2px 7px rgba(59, 88, 114, 1);
   }
 }
-
 
 .button-group {
   padding-top: 27px;
@@ -90,7 +104,6 @@ a.brand {
   &:hover {
     background-color: #3B5872;
   }
-
 }
 
 #register {
@@ -143,6 +156,14 @@ p.alert {
   margin-top: 3px;
 }
 
+#state-drop-dwn form {
+  margin: 0;
+}
+
+#state-drop-dwn .button {
+  margin: 0 0 1em;
+}
+
 
 .footer-link a {
   color: #1B2D3F;
@@ -165,15 +186,8 @@ footer p {
 
 /*STATE PROFILE PAGE STYLING!!!!*/
 .state-map {
-  width: 350px;
-  height: 350px;
+  width: 100%;
   border: 2px solid #0f0f0f;
-}
-
-.state-info {
-  height: 350px;
-  width: 350px;
-  border: 1px solid #000;
 }
 
 .state-gage-table {
@@ -184,14 +198,16 @@ footer p {
 
 table {
   background: #92ACBE;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.4em;
 }
-
 
 table td {
   border: 1px solid #030303;
   margin: 0;
-  padding: 3px;
-  width: 100%;
+  padding: 8px;
+  width: auto;
 }
 
 td a:hover {

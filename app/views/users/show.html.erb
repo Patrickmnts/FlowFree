@@ -1,6 +1,38 @@
+<% content_for :title do %>
+  <% 'Profile' %>
+<% end %>
+
 <div class="row">
   <div class="large-12 columns">
     <h4>Signed in as <%= @user.email %></h4>
+    <div class="large-8 large-offset-2 columns">
+      <%= image_tag("http://maps.googleapis.com/maps/api/staticmap?size=980x400&maptype=hybrid&sensor=false&markers=#{markers_for_profile_map(@subscriptions)}", alt: "Map markers for #{params[:search]} in #{params[:state]}")%>
+    </div>
+    <div class="profile-box">
+      <table>
+        <thead>
+          <tr>
+            <th>Site name</th>
+            <th>Site code</th>
+            <th>Current Flow</th>
+            <th>Below</th>
+            <th>Above</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @subscriptions.each do |subscription| %>
+          <tr>
+            <td><%= subscription.river.site_name %></td>
+            <td><%= subscription.river.site_code %></td>
+            <td><%= subscription.river.cfs_value %> cfs</td>
+            <td><%= subscription.floor %></td>
+            <td><%= subscription.ceiling %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 

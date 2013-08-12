@@ -1,5 +1,5 @@
 class RiverTime < ActiveRecord::Base
-  has_many :rivers
-
+  belongs_to :river,
+             :foreign_key => "site_code"
 
 end

@@ -1,6 +1,11 @@
 class River < ActiveRecord::Base
   include RiversHelper
-  has_many :users, through: :subscription
+  self.primary_key = "site_code"
+  has_many :users,
+           :through => "subscriptions",
+           :foreign_key => "site_code"
+  has_many :river_times,
+           :foreign_key => "site_code"
 
 
   def state
