@@ -100,11 +100,11 @@
             <div class="large-6 columns">
               <ul class="inline-list right footer-link">
                 <% if user_signed_in? != true %>
-                  <li><%= link_to 'Sign in', sign_in_path %></li>
+                  <li><%= link_to 'Sign In', sign_in_path %></li>
                   <li><%= link_to 'Register', sign_up_path %></li>
                 <% end %>
                 <% if user_signed_in? %>
-                  <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+                  <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
                   <li><%= link_to 'My Profile', user_profile_path(current_user) %></li>
                 <% end %>
               </ul>
