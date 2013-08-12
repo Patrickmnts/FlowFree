@@ -52,6 +52,10 @@ a.brand {
   font-family: 'Permanent Marker', cursive;
   color: #FFF;
   text-shadow: 2px 2px 7px rgba(27, 45, 63, 1);
+  -moz-transition: text-shadow 200ms ease-out;
+  -webkit-transition: text-shadow 200ms ease-out;
+  -o-transition: text-shadow 200ms ease-out;
+  transition: text-shadow 200ms ease-out;
   &:hover {
     color: #FFF;
     text-shadow: 2px 2px 7px rgba(59, 88, 114, 1);
