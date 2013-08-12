@@ -39,12 +39,12 @@ class Api
 
   def self.sanitize(site)
     sanitized = {}
-    sanitized["site_name"] = Sanitize.site_name(site)
-    sanitized["site_code"] = Sanitize.site_code(site)
-    sanitized["latitude"] = Sanitize.latitude(site)
+    sanitized["site_name"]   = Sanitize.site_name(site)
+    sanitized["site_code"]    = Sanitize.site_code(site)
+    sanitized["latitude"]    = Sanitize.latitude(site)
     sanitized["longitude"] = Sanitize.longitude(site)
     sanitized["county_id"] = Sanitize.county_id(site)
-    sanitized["cfs_value"] = Sanitize.cfs_value(site)
+    sanitized["cfs_value"]  = Sanitize.cfs_value(site)
     return sanitized
   end
 

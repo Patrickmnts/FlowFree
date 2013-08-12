@@ -88,8 +88,9 @@ class RiversController < ApplicationController
   end
 
   def subscribe_to_gauge
-    Subscription.new(user_id: current_user, site_code: params[:site_code])
-    redirect_to "rivers/subscribe_to_gauge/#{params[:site_code]}"
+    session[:return_to] ||= request.referer
+    Subscription.create(user_id: current_user.id, site_code: params[:site_code])
+    redirect_to session[:return_to]
   end
 
   private

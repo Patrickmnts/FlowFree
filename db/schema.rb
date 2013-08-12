@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20130808201818) do
   end
 
   create_table "river_times", force: true do |t|
-    t.string   "site_code"
+    t.integer  "site_code"
     t.datetime "time"
     t.integer  "cfs_value"
     t.datetime "created_at"
@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 20130808201818) do
   add_index "river_times", ["site_code"], name: "index_river_times_on_site_code"
   add_index "river_times", ["time"], name: "index_river_times_on_time"
 
-  create_table "rivers", force: true do |t|
+  create_table "rivers", id: false, force: true do |t|
+    t.integer  "site_code"
     t.string   "site_name"
-    t.string   "site_code"
     t.string   "latitude"
     t.string   "longitude"
     t.string   "county_id"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20130808201818) do
 
   create_table "subscriptions", force: true do |t|
     t.integer  "user_id"
-    t.string   "site_code"
+    t.integer  "site_code"
     t.integer  "ceiling"
     t.integer  "floor"
     t.datetime "created_at"
