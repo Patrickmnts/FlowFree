@@ -2,7 +2,7 @@ class CreateSubscriptions < ActiveRecord::Migration
   def change
     create_table :subscriptions do |t|
       t.integer :user_id
-      t.integer :site_code
+      t.string :site_code
       t.integer :ceiling
       t.integer :floor
 
