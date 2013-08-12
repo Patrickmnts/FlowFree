@@ -2,7 +2,31 @@
   <div class="large-12 columns">
     <h4>Signed in as <%= @user.email %></h4>
     <div class="profile-box">
+      <table>
+        <thead>
+          <tr>
+            <th>Site name</th>
+            <th>Site code</th>
+            <th>Current Flow</th>
+            <th>Below</th>
+            <th>Above</th>
+            <th>Follow</th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <% @rivers.each do |river| %>
+          <tr>
+            <td><%= river.site_name %></td>
+            <td><%= river.site_code %></td>
+            <td><%= river.cfs_value %> cfs</td>
+            <td><%=  %></td>
+            <td><%=  %></td>
+            <td><%= link_to 'Follow', subscribe_path(river.site_code), method: :post %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
