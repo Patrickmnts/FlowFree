@@ -6,7 +6,7 @@
   <div class="large-12 columns">
     <h4>Signed in as <%= @user.email %></h4>
     <div class="large-8 large-offset-2 columns">
-
+      <%= image_tag("http://maps.googleapis.com/maps/api/staticmap?size=980x400&maptype=hybrid&sensor=false&markers=#{markers_for_profile_map(@subscriptions)}", alt: "Map markers for #{params[:search]} in #{params[:state]}")%>
     </div>
     <div class="profile-box">
       <table>
