@@ -1,24 +1,85 @@
 body {
-/* background-image: asset-data-url('river-background.png');
- background-repeat: no-repeat;
- background-position: relative;
-*/}
+ background-image: image-url('river1440.jpg');
+ background-repeat: repeat;
+ background-position: absolute;
+ font-family: "PT Sans Narrow";
+}
+
+body p {
+ font-size: 18px;
+ line-height: 23px;
+ color: #1B2D3F;
+}
+
+a {
+  color: #3B5872;
+  &:hover {
+    color: #1B2D3F;
+  }
+}
+
+div.content {
+  background-color: #92ACBE;
+  padding: 13px 0;
+  max-width: 938px;
+}
+
+.content p {
+  text-align: justify;
+}
+
+h1,h2,h3,h4 {
+  font-family: "Oswald";
+  color: #1B2D3F;
+}
+
+h1 {
+  font-size: 3em;
+}
 
 /* HEADER STYLING!!! */
 .header {
   height: 150px;
 }
 
-.banner-link {
-  font-family: Ariel;
+a.brand {
+  font-family: 'Permanent Marker', cursive;
+  color: #FFF;
+  text-shadow: 2px 2px 7px rgba(27, 45, 63, 1);
+  &:hover {
+    color: #FFF;
+    text-shadow: 2px 2px 7px rgba(59, 88, 114, 1);
+  }
 }
 
-h2 {
-  text-align: center;
+
+.button-group {
+  padding-top: 27px;
 }
 
 .button {
+  background-color:#3B5872;
+  border-color: #BED1D8;
+  font-family: "Oswald";
+  &:hover {
+    background-color: #1B2D3F;
+  }
+}
+
+#register-button {
   border-radius: 8px;
+  font-family: 'Permanent Marker', cursive;
+  background-color:#1B2D3F;
+  margin-bottom: 0px;
+  margin-top: 3px;
+  &:hover {
+    background-color: #3B5872;
+  }
+
+}
+
+#register {
+  text-align: center;
 }
 
 .alert {
@@ -41,16 +102,12 @@ h2 {
   text-align: center;
 }
 
-.center-iframe {
-  margin: 0 auto;
-  display:block;
-}
 
 #googft-mapCanvas {
   height: 450px;
   margin: 0 auto;
   padding: 20px;
-  width: 750px;
+  width: 100%;
 }
 
 #googft-mapCanvas img{
@@ -58,16 +115,16 @@ h2 {
   padding: 20px;
   }
 
-#state-drop-dwn {
-  padding-top: 15px;
-}
-
 .state_list {
   margin-top: 10px;
 }
 
 #list {
   margin-top: 10px;
+}
+
+#state-drop-dwn {
+  margin-top: 3px;
 }
 
 .img {
@@ -78,17 +135,17 @@ h2 {
   color: white;
 }
 
-.footer {
-  text-align: right;
-  height: 70px;
+.footer-link a {
+  color: #FFF;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-table td {
-  border: 1px solid #030303;
-  margin: 0;
-  padding: 3px;
-  width: 100%;
+footer p {
+  color: #BED1D8;
 }
+
 
 #graph {
   height: 400px;
@@ -114,22 +171,47 @@ table td {
   margin-top: 20px;
 }
 
-.pagination li {
-  list-style: none;
-  display: inline;
-  margin: 0 auto;
-  padding: 7px;
-  background-color: #2ba6cb;
-  border-radius: 60px;
-    a {
-      color: #0F0F0F;
-      padding: 10px;
-      border-radius: 60px;
-    &:hover {
-      background-color: white;
-      color: #0f0f0f;
-    }
+table {
+  background: #92ACBE;
+}
+
+table td {
+  border: 1px solid #030303;
+  margin: 0;
+  padding: 3px;
+  width: 100%;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+table tr th, table tr td {
+  color: #1B2D3F;
+}
+
+table tbody tr td {
+  line-height: 1em;
+}
+
+table thead tr th {
+  background: #6D8BA7;
+  color: #1B2D3F;
+}
+
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+  background: #BED1D8;
+}
+
+
+.pagination a {
+  color: #FFF;
+  &:hover{
+    color: #3B5872;
   }
+}
+
+.current {
+  color: #1B2D3F;
 }
 
 .active {
@@ -148,19 +230,23 @@ table td {
 
 /* RIVER SHOW PAGE STYLING*/
 
-#state-show h2,h3,h4 {
-  text-align: center;
-}
 
 #state-show h3 {
   padding-bottom: 20px;
+  text-align: center;
 }
 
 #state-show h2 {
   margin-bottom: 2px;
+  text-align: center;
 }
 
 #state-show img {
   margin: 0 auto;
   display:block;
+}
+
+.container {
+  max-width: 968px;
+  margin: 0 auto;
 }
