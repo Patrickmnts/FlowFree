@@ -1,8 +1,13 @@
+.container {
+  max-width: 968px;
+  margin: 0 auto;
+}
+
 body {
- background-image: image-url('river1440.jpg');
+ background-image: image-url('river1680.jpg');
  background-repeat: repeat;
  background-position: absolute;
- font-family: "PT Sans Narrow";
+ font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
 }
 
 body p {
@@ -18,18 +23,8 @@ a {
   }
 }
 
-div.content {
-  background-color: #92ACBE;
-  padding: 13px 0;
-  max-width: 938px;
-}
-
-.content p {
-  text-align: justify;
-}
-
 h1,h2,h3,h4 {
-  font-family: "Oswald";
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   color: #1B2D3F;
 }
 
@@ -37,15 +32,30 @@ h1 {
   font-size: 3em;
 }
 
-/* HEADER STYLING!!! */
-.header {
-  height: 150px;
+div.content {
+  background-color: #92ACBE;
+  padding: 13px 0;
+  max-width: 938px;
+}
+
+div.content2 {
+  background-color: #92ACBE;
+  padding: 13px 13px;
+  max-width: 938px;
+}
+
+.content p {
+  text-align: justify;
 }
 
 a.brand {
   font-family: 'Permanent Marker', cursive;
   color: #FFF;
-  text-shadow: 2px 2px 7px rgba(27, 45, 63, 1);
+  text-shadow: 2px 2px 10px rgba(27, 45, 63, 1);
+  -moz-transition: text-shadow 200ms ease-out;
+  -webkit-transition: text-shadow 200ms ease-out;
+  -o-transition: text-shadow 200ms ease-out;
+  transition: text-shadow 200ms ease-out;
   &:hover {
     color: #FFF;
     text-shadow: 2px 2px 7px rgba(59, 88, 114, 1);
@@ -60,10 +70,15 @@ a.brand {
 .button {
   background-color:#3B5872;
   border-color: #BED1D8;
-  font-family: "Oswald";
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   &:hover {
     background-color: #1B2D3F;
   }
+}
+
+.searchbutton {
+  border-radius: 8px;
+  display: inline;
 }
 
 #register-button {
@@ -83,15 +98,16 @@ a.brand {
 }
 
 .alert {
-  color: lightgray;
-  background-color: #2d2d2d
+  color: #FFF;
+  background-color: #1B2D3F;
+}
+
+p.alert {
+  padding: 5px;
 }
 
 .map h2 {
   text-align: center;
-}
-
-.header h1 {
 }
 
 .user-links {
@@ -118,26 +134,20 @@ a.brand {
 .state_list {
   margin-top: 10px;
 }
+
 #list {
   margin-top: 10px;
-
 }
 
 #state-drop-dwn {
   margin-top: 3px;
 }
 
-.img {
-  border-radius: 25px;
-}
-
-.alert {
-  color: white;
-}
 
 .footer-link a {
-  color: #FFF;
+  color: #1B2D3F;
   &:hover {
+    color: #FFF;
     text-decoration: underline;
   }
 }
@@ -146,7 +156,6 @@ footer p {
   color: #BED1D8;
 }
 
-
 #graph {
   height: 400px;
   width: 576px;
@@ -154,13 +163,13 @@ footer p {
   margin-top: 15px;
 }
 
-
 /*STATE PROFILE PAGE STYLING!!!!*/
 .state-map {
   width: 350px;
   height: 350px;
   border: 2px solid #0f0f0f;
 }
+
 .state-info {
   height: 350px;
   width: 350px;
@@ -171,9 +180,12 @@ footer p {
   margin-top: 20px;
 }
 
+/*TABLE STYLING*/
+
 table {
   background: #92ACBE;
 }
+
 
 table td {
   border: 1px solid #030303;
@@ -202,34 +214,46 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
   background: #BED1D8;
 }
 
+/* PAGINATION STUFF */
 
 .pagination a {
   color: #FFF;
+  background-color:#1B2D3F;
+  padding: 5px;
+  border-radius: 5px;
   &:hover{
     color: #3B5872;
   }
 }
 
-.current {
-  color: #1B2D3F;
+.current, {
+  color: #FFF;
+  background-color:#3B5872;
+  padding: 5px;
+  font-style: normal;
+  border-radius: 5px;
+  &:hover{
+    color: #FFF;
+  }
+}
+
+.disabled {
+  color: #FFF;
+  background-color:#1B2D3F;
+  padding: 5px;
+  font-style: normal;
+  border-radius: 5px;
+  &:hover{
+    color: #FFF;
+  }
 }
 
 .active {
   background-color: lightgray;
 }
 
-.searchbutton {
-  border-radius: 8px;
-  display: inline;
-}
-
-.profile-box {
-  width: 600px;
-  height: 400px;
-}
 
 /* RIVER SHOW PAGE STYLING*/
-
 
 #state-show h3 {
   padding-bottom: 20px;
@@ -244,12 +268,4 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
 #state-show img {
   margin: 0 auto;
   display:block;
-}
-
-
-
-
-.container {
-  max-width: 968px;
-  margin: 0 auto;
 }
