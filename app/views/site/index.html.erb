@@ -9,7 +9,7 @@
 <div class="container">
 <div class="row content">
   <div class="large-4 columns">
-    <%= image_tag("flowing-river1.jpg", class: 'home-content-img') %>
+    <%= image_tag("flowing-river1.jpg", class: 'content-img') %>
   </div>
   <div class="large-8 columns">
     <h4>Search current flows of all rivers and streams in the USA</h4>
@@ -21,18 +21,18 @@
           <div id='state-drop-dwn'>
             <%= form_tag rivers_by_state_path do %>
               <%= select_tag :state, options_for_select(us_states), :prompt => 'Select A State' %>
-              <%= submit_tag "Go!", class: 'button small' %>
+              <%= submit_tag("Go!", class: 'button tiny') %>
             <% end %>
             <%= form_tag rivers_by_name_path do %>
               <%= text_field_tag :search, params[:search], :placeholder => 'Search the nation...' %>
-              <%= submit_tag "Search", class: 'button small' %>
+              <%= submit_tag("Search", class: 'button tiny') %>
            <% end %>
           </div>
         </div>
       </div>
   </div>
   </div>
-  <div class="row content">
+  <div class="row content content-row2">
     <div class="large-8 columns">
       <h4>Create your own personalized gauge page</h4>
         <div class="row">
@@ -46,7 +46,7 @@
         </div>
     </div>
     <div class="large-4 columns">
-      <%= image_tag("raft.jpg") %>
+      <%= image_tag("raft.jpg", class: 'content-img') %>
     </div>
   </div>
 </div>
