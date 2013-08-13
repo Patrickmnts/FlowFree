@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "Site pages" do
+# //////////////////////////////////////////////////////////////////////
   describe "Home page" do
     before :each do
       visit '/'
@@ -54,6 +55,7 @@ describe "Site pages" do
       current_path.should == '/rivers/by_name/Mississippi'
     end
   end
+# //////////////////////////////////////////////////////////////////////
   describe "Register page" do
     before :each do
       visit '/users/sign_up'
@@ -101,4 +103,5 @@ describe "Site pages" do
       expect(page).to have_content("devise/sessions:new")
     end
   end
+# //////////////////////////////////////////////////////////////////////
 end
