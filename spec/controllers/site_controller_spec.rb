@@ -104,4 +104,6 @@ describe "Site pages" do
     end
   end
 # //////////////////////////////////////////////////////////////////////
+  describe "Sign in page" do
+  end
 end
