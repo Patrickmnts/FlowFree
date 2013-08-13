@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
            :through => "subscriptions",
            :foreign_key => "site_code"
 
+  def subscribed?(site_code)
+    Subscription.find_by(user_id: self.id, site_code: site_code)
+  end
+
 end
