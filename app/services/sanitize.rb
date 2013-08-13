@@ -1,7 +1,13 @@
 class Sanitize
 
   def self.site_name(site)
-    site["sourceInfo"]["siteName"].split.map(&:capitalize).join(' ')
+    string = site["sourceInfo"]["siteName"]
+      if string =~ /[,]\w{2}/
+        string.insert(-3, ' ')
+      end
+    nameArray = string.split.map(&:capitalize)
+    name = nameArray[0..-2].join(' ') + ' ' + nameArray[-1].upcase
+    return name
   rescue
     Log.create(message: "Error with site_name sanitizer.")
     return "ERROR"

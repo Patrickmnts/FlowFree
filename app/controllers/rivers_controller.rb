@@ -45,6 +45,7 @@ class RiversController < ApplicationController
 
   # GET /rivers/1/edit
   def edit
+    session[:return_to] = request.referer
   end
 
   # POST /rivers
@@ -90,6 +91,20 @@ class RiversController < ApplicationController
   def subscribe_to_gauge
     session[:return_to] ||= request.referer
     Subscription.create(user_id: current_user.id, site_code: params[:site_code])
+    redirect_to(session.delete(:return_to) || default)
+  end
+
+  def unsubscribe_from_gauge
+    session[:return_to] ||= request.referer
+    Subscription.find_by(user_id: current_user.id, site_code: params[:site_code]).destroy
+    redirect_to(session.delete(:return_to) || default)
+  end
+
+  def update_subscription
+    session[:return_to] ||= request.referer
+    subscription = Subscription.find_by(user_id: current_user.id, site_code: params[:site_code])
+    subscription.update(floor: params[:floor], ceiling: params[:ceiling])
+    subscription.save
     redirect_to session[:return_to]
   end
 

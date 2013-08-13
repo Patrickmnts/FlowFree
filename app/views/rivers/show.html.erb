@@ -3,7 +3,7 @@
 <% end %>
 <div id="state-show">
 <div class="row">
-  <div class="large-10 large-offset-1 columns">
+  <div class="large-8 large-offset-2 columns title-content">
     <h2><%= @river.site_name %></h2>
     <br>
     <h3>Current Flow: <%= @river.cfs_value %> cfs </h3>
@@ -17,42 +17,41 @@
     <p id="notice"><%= notice %></p>
     <p>
       <strong>State:</strong>
-      <%= @river.state.capitalize %>
-    </p>
-    <p>
+      <%= @river.state.titleize %>
+    <br/>
       <strong>CFS value:</strong>
       <%= @river.cfs_value %> cfs
-    </p>
-    <p>
+    <br/>
       <strong>Latitude:</strong>
       <%= @river.latitude %>
-    </p>
-    <p>
+    <br/>
       <strong>Longitude:</strong>
       <%= @river.longitude %>
-    </p>
-    <p>
+    <br/>
       <strong>Site code:</strong>
       <%= @river.site_code %>
-
-    </p>
-    <p>
+    <br/>
       <strong>Refresh time:</strong>
       <%= @river.time %>
-    </p>
-    <p>
+    <br/>
       <strong>County:</strong>
       <%= @river.county_id %>
     </p>
+    <p>
+      <% if user_signed_in? %>
+        <% if current_user.subscribed?(@river.site_code) %>
+          <%= link_to 'Unsubscribe', unsubscribe_path(@river.site_code), method: :post, class: 'button tiny', id: 'unsubscribe' %>
+        <% else %>
+          <%= link_to 'Subscribe', subscribe_path(@river.site_code), method: :post, class: 'button tiny' %>
+        <% end %>
+      <% end %>
+    </p>
   </div>
-<!--
-  <div class="large-6 columns">
-  </div>
-</div>
-<div class="row"> -->
   <div class="large-8 columns text-center">
       <%= image_tag("http://waterdata.usgs.gov/nwisweb/graph?agency_cd=USGS&site_no=#{@river.site_code}&parm_cd=00060&period=7", alt: "site graph for gauge number #{@river.site_code}") %>
-    <h4>DISCHARGE FOR LAST 7 DAYS</h4>
+    <div class="graph-title">
+      <h4>GRAPH FOR LAST 7 DAYS</h4>
+    </div>
   </div>
 </div>
 </div>

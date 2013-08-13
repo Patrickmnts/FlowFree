@@ -1,19 +1,19 @@
 <% content_for :title do %>
-  <% if params[:state] != nil && params[:search] != nil %>
-    Sites in <%= params[:state].upcase %> that match: '<%= params[:search] %>'
-  <% end %>
-  <% if params[:state] != nil && params[:search] == nil %>
-    Sites in <%= params[:state].upcase %>
-  <% elsif params[:search] != nil && params[:state] == nil %>
-    Sites Matching '<%= params[:search] %>'
-  <% end %>
+<% if params[:state] != nil && params[:search] != nil %>
+Sites in <%= params[:state].upcase %> that match: '<%= params[:search] %>'
+<% end %>
+<% if params[:state] != nil && params[:search] == nil %>
+Sites in <%= params[:state].upcase %>
+<% elsif params[:search] != nil && params[:state] == nil %>
+Sites Matching '<%= params[:search] %>'
+<% end %>
 <% end %>
 <div class="row">
 
 </div>
 <div class="row">
   <div class="large-8 large-offset-2 columns">
-      <h4>Gauge Locations</h4>
+    <h4>Gauge Locations</h4>
     <div class="state-map">
       <%= image_tag("http://maps.googleapis.com/maps/api/staticmap?size=980x400&maptype=hybrid&sensor=false&markers=#{markers_for_static_map(@rivers)}", alt: "Map markers for #{params[:search]} in #{params[:state]}")%>
     </div>
@@ -30,18 +30,18 @@
 <div class="row">
   <div class="large-5 large-offset-2 columns state-gage-table">
     <% if params[:state] != nil && params[:search] != nil %>
-      <h4>Sites in <%= params[:state].upcase %> that match: '<%= params[:search] %>' </h4>
+    <h4>Sites in <%= params[:state].upcase %> that match: '<%= params[:search] %>' </h4>
     <% end %>
     <% if params[:state] != nil && params[:search] == nil %>
-      <h4>Sites in <%= params[:state].upcase %></h4>
-      <%= form_tag rivers_by_state_by_name_path do %>
-      <%= text_field_tag :search, params[:search], :placeholder => "Search #{params[:state].upcase} sites here..." %>
-      <%= hidden_field_tag :state, params[:state] %>
-        <%= submit_tag "Search", :name => nil, class: 'small button searchbutton' %>
-      <% end %>
+    <h4>Sites in <%= params[:state].upcase %></h4>
+    <%= form_tag rivers_by_state_by_name_path do %>
+    <%= text_field_tag :search, params[:search], :placeholder => "Search #{params[:state].upcase} sites here..." %>
+    <%= hidden_field_tag :state, params[:state] %>
+    <%= submit_tag "Search", :name => nil, class: 'small button searchbutton' %>
+    <% end %>
     <% end %>
     <% if params[:search] != nil && params[:state] == nil %>
-      <h4>Nationwide Search for: '<%= params[:search] %>'</h4>
+    <h4>Nationwide Search for: '<%= params[:search] %>'</h4>
     <% end %>
   </div>
   <div class="large-7 columns">
@@ -61,25 +61,31 @@
           <th>Longitude</th>
           <th>More info</th>
           <% if user_signed_in? %>
-            <th>Follow</th>
+          <th>Follow</th>
           <% end %>
         </tr>
       </thead>
 
       <tbody>
         <% @rivers.each do |river| %>
-          <tr>
-            <td><%= river.site_name %></td>
-            <td><%= river.cfs_value %> cfs</td>
-            <td><%= river.site_code %></td>
-            <td><%= river.time %></td>
-            <td><%= river.latitude %></td>
-            <td><%= river.longitude %></td>
-            <td><%= link_to 'Details', river %></td>
-            <% if user_signed_in? %>
-              <td><%= link_to 'Follow', subscribe_path(river.site_code), method: :post %></td>
+        <tr>
+          <td><%= river.site_name %></td>
+          <td><%= river.cfs_value %> cfs</td>
+          <td><%= river.site_code %></td>
+          <td><%= river.time %></td>
+          <td><%= river.latitude %></td>
+          <td><%= river.longitude %></td>
+          <td><%= link_to 'Details', river, class: 'button tiny' %></td>
+          <% if user_signed_in? %>
+          <td>
+            <% if current_user.subscribed?(river.site_code) %>
+              <%= link_to 'Unsubscribe', unsubscribe_path(river.site_code), method: :post, class: 'button tiny', id: 'unsubscribe' %>
+            <% else %>
+              <%= link_to 'Subscribe', subscribe_path(river.site_code), method: :post, class: 'button tiny' %>
             <% end %>
-          </tr>
+          <% end %>
+          </td>
+        </tr>
         <% end %>
       </tbody>
     </table>
