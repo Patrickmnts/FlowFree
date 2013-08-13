@@ -27,7 +27,7 @@
         <tbody>
           <% @subscriptions.each do |subscription| %>
           <tr>
-            <td><%= subscription.river.site_name %></td>
+            <td><%= link_to "#{subscription.river.site_name}", subscription.river %></td>
             <td><%= subscription.river.site_code %></td>
             <td><%= subscription.river.cfs_value %> cfs</td>
             <td><%= subscription.floor %></td>
