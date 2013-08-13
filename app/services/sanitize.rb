@@ -2,6 +2,7 @@ class Sanitize
 
   def self.site_name(site)
     string = site["sourceInfo"]["siteName"]
+    string.gsub(/(\.)\z/, '')
       if string =~ /[,]\w{2}/
         string.insert(-3, ' ')
       elsif string !~ /,/
