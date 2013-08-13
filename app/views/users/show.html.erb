@@ -21,6 +21,7 @@
             <th>Current Flow</th>
             <th>Below</th>
             <th>Above</th>
+            <th></th>
           </tr>
         </thead>
 
@@ -32,8 +33,11 @@
             <td><%= subscription.river.cfs_value %> cfs</td>
             <td><%= subscription.floor %></td>
             <td><%= subscription.ceiling %></td>
-          </tr>
+            <td>
+              <%= link_to 'Unsubscribe', unsubscribe_path(subscription.river.site_code), method: :post, class: 'button tiny', id: 'unsubscribe' %>
+            </td>
           <% end %>
+          </tr>
         </tbody>
       </table>
     </div>

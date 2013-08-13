@@ -272,7 +272,7 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
 /* RIVER SHOW PAGE STYLING*/
 
 #state-show h3 {
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   text-align: center;
 }
 
@@ -284,6 +284,15 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
 #state-show img {
   margin: 0 auto;
   display:block;
+}
+
+.title-content {
+  margin-bottom: 30px;
+  background-color: #92ACBE;
+  padding: 5px 5px;
+  max-width: 938px;
+  box-shadow: 0 0 13px rgba(27, 45, 63, 1);
+  border-radius: 40px;
 }
 
 /* USER PROFILE PAGES!!!! */
@@ -300,6 +309,20 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
   padding: 13px 13px;
   max-width: 938px;
   box-shadow: 0 0 13px rgba(27, 45, 63, 1);
+}
+
+#unsubscribe {
+  background-color: #FFF;
+  color: #1B2D3F;
+  border: 1px solid #1B2D3F;
+}
+
+.graph-title {
+  margin-top: 10px;
+  background-color: #92ACBE;
+  padding: 5px 5px;
+  box-shadow: 0 0 13px rgba(27, 45, 63, 1);
+  border-radius: 40px;
 }
 
 
