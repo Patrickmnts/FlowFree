@@ -81,6 +81,19 @@ a.brand {
   padding-top: 27px;
 }
 
+.button-group2 {
+  padding-top: 3px;
+    #sign-in-as {
+  margin-top: -2px;
+  float: right;
+  }
+  li {
+    list-style: none;
+    display: inline;
+    float: left;
+  }
+}
+
 .button {
   background-color:#3B5872;
   border-color: #BED1D8;
@@ -324,7 +337,6 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
   box-shadow: 0 0 13px rgba(27, 45, 63, 1);
   border-radius: 40px;
 }
-
 
 
 

@@ -2,8 +2,11 @@ class Sanitize
 
   def self.site_name(site)
     string = site["sourceInfo"]["siteName"]
+    string.gsub(/(\.)\z/, '')
       if string =~ /[,]\w{2}/
         string.insert(-3, ' ')
+      elsif string !~ /,/
+        string.insert(-4, ',')
       end
     nameArray = string.split.map(&:capitalize)
     name = nameArray[0..-2].join(' ') + ' ' + nameArray[-1].upcase

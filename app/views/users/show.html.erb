@@ -4,7 +4,6 @@
 
 <div class="row">
   <div class="large-12 columns text-center">
-    <h4>Signed in as <%= @user.email %></h4>
     <div class="large-8 large-offset-2 columns user-map">
       <%= image_tag("http://maps.googleapis.com/maps/api/staticmap?size=980x400&maptype=hybrid&sensor=false&markers=#{markers_for_profile_map(@subscriptions)}", alt: "Map markers for #{params[:search]} in #{params[:state]}")%>
     </div>
@@ -21,7 +20,8 @@
             <th>Current Flow</th>
             <th>Notify if Below(cfs)</th>
             <th>Notify if Above(cfs)</th>
-            <th></th>
+            <th>Update</th>
+            <th>Keep?</th>
           </tr>
         </thead>
 
@@ -36,6 +36,7 @@
                 <td><%= text_field_tag :floor, "#{subscription.floor}" %></td>
                 <td><%= text_field_tag :ceiling, "#{subscription.ceiling}" %></td>
                 <td><%= submit_tag("Update", class: 'button tiny') %></td>
+                <td><%= link_to 'Unsubscribe', unsubscribe_path(subscription.river.site_code), method: :post, class: 'button tiny', id: 'unsubscribe' %></td>
               </tr>
             <% end %>
           <% end %>
