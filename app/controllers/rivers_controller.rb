@@ -105,7 +105,7 @@ class RiversController < ApplicationController
     subscription = Subscription.find_by(user_id: current_user.id, site_code: params[:site_code])
     subscription.update(floor: params[:floor], ceiling: params[:ceiling])
     subscription.save
-    redirect_to session[:return_to]
+    redirect_to(session.delete(:return_to) || default)
   end
 
   private
