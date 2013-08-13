@@ -66,7 +66,20 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffi (1.9.0)
+    formatador (0.2.4)
     foundation-will_paginate (0.0.1)
+    guard (1.8.1)
+      formatador (>= 0.2.4)
+      listen (>= 1.0.0)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      thor (>= 0.14.6)
+    guard-rspec (1.2.1)
+      guard (>= 1.1)
+    guard-spork (1.5.0)
+      childprocess (>= 0.2.3)
+      guard (>= 1.1)
+      spork (>= 0.8.4)
     hike (1.2.3)
     httparty (0.11.0)
       multi_json (~> 1.0)
@@ -82,6 +95,11 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.0)
+    listen (1.2.2)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      rb-kqueue (>= 0.2)
+    lumberjack (1.0.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -128,6 +146,11 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
+    rb-fsevent (0.9.3)
+    rb-inotify (0.9.0)
+      ffi (>= 0.5.0)
+    rb-kqueue (0.2.0)
+      ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
     rspec-core (2.14.4)
@@ -157,6 +180,7 @@ GEM
       websocket (~> 1.0.4)
     simple_form (1.4.1)
     slop (3.4.6)
+    spork (0.9.2)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -201,6 +225,8 @@ DEPENDENCIES
   capybara
   devise
   foundation-will_paginate
+  guard-rspec
+  guard-spork
   httparty
   jbuilder (~> 1.2)
   jquery-rails

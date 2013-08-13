@@ -26,6 +26,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry'
   gem 'awesome_print'
+  gem 'guard-rspec'
 end
 
 group :test do
