@@ -22,6 +22,6 @@ Launch the rails server in order to explore site
 Now head on over to Localhost:3000 and explore FlowFree!
 
 
-FlowFree was built using Ruby 2.0, Rails 4, Foundation, HTML5, CSS3, Rspec & Postgres SQL.
+FlowFree was built using Ruby 2.0, Rails 4, Foundation, HTML5, CSS3, Rspec & SQLite.
 
 Created by: Vera Andjelkovic, Bryan Wahlstrom, Daniel Stark & Patrick Mounts
