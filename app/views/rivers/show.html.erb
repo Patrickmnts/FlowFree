@@ -39,7 +39,11 @@
     </p>
     <p>
       <% if user_signed_in? %>
-      <%= link_to 'Follow', subscribe_path(@river.site_code), method: :post, class: 'button tiny' %>
+        <% if current_user.subscribed?(@river.site_code) %>
+          <%= link_to 'Unsubscribe', unsubscribe_path(@river.site_code), method: :post, class: 'button tiny' %>
+        <% else %>
+          <%= link_to 'Subscribe', subscribe_path(@river.site_code), method: :post, class: 'button tiny' %>
+        <% end %>
       <% end %>
     </p>
   </div>
