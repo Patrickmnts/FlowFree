@@ -19,20 +19,25 @@
             <th>Site name</th>
             <th>Site code</th>
             <th>Current Flow</th>
-            <th>Below</th>
-            <th>Above</th>
+            <th>Notify if Below(cfs)</th>
+            <th>Notify if Above(cfs)</th>
+            <th></th>
           </tr>
         </thead>
 
         <tbody>
           <% @subscriptions.each do |subscription| %>
-          <tr>
-            <td><%= link_to "#{subscription.river.site_name}", subscription.river %></td>
-            <td><%= subscription.river.site_code %></td>
-            <td><%= subscription.river.cfs_value %> cfs</td>
-            <td><%= subscription.floor %></td>
-            <td><%= subscription.ceiling %></td>
-          </tr>
+            <%= form_tag({controller: "rivers", action: "update_subscription"}, method: "post") do %>
+              <tr>
+                <td><%= link_to "#{subscription.river.site_name}", subscription.river %></td>
+                <td><%= subscription.river.site_code %></td>
+                <td><%= subscription.river.cfs_value %> cfs</td>
+                <%= hidden_field_tag :site_code, "#{subscription.river.site_code}" %>
+                <td><%= text_field_tag :floor, "#{subscription.floor}" %></td>
+                <td><%= text_field_tag :ceiling, "#{subscription.ceiling}" %></td>
+                <td><%= submit_tag("Update", class: 'button tiny') %></td>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
