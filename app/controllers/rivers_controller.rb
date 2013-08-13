@@ -13,15 +13,15 @@ class RiversController < ApplicationController
   end
 
   def post_to_state
-    redirect_to "/rivers/by_state/#{params[:state]}"
+    redirect_to get_rivers_by_state_path(params[:state])
   end
 
   def post_to_name
-    redirect_to "/rivers/by_name/#{params[:search]}"
+    redirect_to get_rivers_by_name_path(params[:search])
   end
 
   def post_to_state_and_name
-    redirect_to "/rivers/by_state_and_name/#{params[:state]}/#{params[:search]}"
+    redirect_to get_rivers_by_state_and_name_path(params[:state], params[:search])
   end
 
   def search
