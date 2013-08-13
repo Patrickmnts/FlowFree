@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h1>Notification from FlowFree.</h1>
+  <p>
+    The following gauges have met the flow conditions you indicated you wished to be notified on.<br/>
+  </p>
+  <p>
+    <%= @subscription.each do |s| %>
+    Site Name: <%= s.river.site_name %><br />
+    Site Code: <%= s.site_code %><br />
+    Current Flow: <%= s.river.cfs_value %> cfs<br /><br />
+    <% end %>
+  </p>
+  <p>You can manage your notifications by signing into FlowFree.</p>
+  <p>-The FlowFree Team</p>
+</body>
+</html>
