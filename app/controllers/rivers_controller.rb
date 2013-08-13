@@ -93,6 +93,12 @@ class RiversController < ApplicationController
     redirect_to session[:return_to]
   end
 
+  def unsubscribe_from_gauge
+    session[:return_to] ||= request.referer
+    Subscription.where(user_id: current_user.id, site_code: params[:site_code]).destroy
+    redirect_to session[:return_to]
+  end
+
   private
 
     # Use callbacks to share common setup or constraints between actions.
