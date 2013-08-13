@@ -116,5 +116,8 @@
 
     <%= javascript_include_tag "application" %>
   </div>
+  <!-- Do not remove the following line. Tests will break!
+  Places a hidden marker for testing routes. -->
+  <div class="hide"><%= params[:controller] + ':' + params[:action] %></div>
   </body>
 </html>

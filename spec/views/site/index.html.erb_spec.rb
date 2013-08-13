@@ -9,13 +9,17 @@ describe "Home page" do
     visit '/'
     expect(page).to have_content("Search current flows")
   end
-  # it "should have a register button" do
-  #   visit '/'
-  #   expect(page).to have_link('Register')
-  # end
-  it "should have a sign-in button" do
+  it "should have a register button in the top right corner" do
     visit '/'
-    expect(page).to have_link('Sign In')
+    within(:css, '.button-group.right') do
+      expect(page).to have_link('Register')
+    end
+  end
+  it "should have a sign-in button in the top right corner" do
+    visit '/'
+    within(:css, '.button-group.right') do
+      expect(page).to have_link('Sign In')
+    end
   end
   it "should have a drop-down menu of states" do
     visit '/'
