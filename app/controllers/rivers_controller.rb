@@ -95,7 +95,7 @@ class RiversController < ApplicationController
 
   def unsubscribe_from_gauge
     session[:return_to] ||= request.referer
-    Subscription.where(user_id: current_user.id, site_code: params[:site_code]).destroy
+    Subscription.find_by(user_id: current_user.id, site_code: params[:site_code]).destroy
     redirect_to session[:return_to]
   end
 

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
            :foreign_key => "site_code"
 
   def subscribed?(site_code)
-    Subscription.find_by(user_id: current_user.id, site_code: site_code)
+    Subscription.find_by(user_id: self.id, site_code: site_code)
   end
 
 end
