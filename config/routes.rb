@@ -5,6 +5,8 @@ Flowfree::Application.routes.draw do
 
   post '/rivers/subscribe_to_gauge/:site_code', to: 'rivers#subscribe_to_gauge', as: 'subscribe'
 
+  post '/rivers/unsubscribe_from_gauge/:site_code', to: 'rivers#unsubscribe_from_gauge', as: 'unsubscribe'
+
 # routes for dropdown state select on homepage
   get '/rivers/by_state/:state', to: 'rivers#index'
   # not retrieving by state but POSTING instead
