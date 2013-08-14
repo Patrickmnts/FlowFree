@@ -53,9 +53,10 @@ class Api
     Api.write_river(river_hash)
   end
 
+  # UNCOMMENT BELOW TO REENABLE TIME SERIES DATA.
   def self.build_river_time(sanitized, time)
     time_hash = {site_code: sanitized["site_code"], time: time, cfs_value: sanitized["cfs_value"]}
-    Api.write_time(time_hash)
+    # Api.write_time(time_hash)
     Api.update_river(sanitized, time)
   end
 
