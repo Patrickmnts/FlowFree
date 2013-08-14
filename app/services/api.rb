@@ -3,7 +3,7 @@ class Api
 
   def self.fetch
     time = Time.now
-    Log.create(message: "Api fetch started at #{time}")
+    Log.create(message: "Api fetch started.")
     States.list.each do |state|
       api_output = Api.get_api(state[1])
       api_output["value"]["timeSeries"].each do |site|
@@ -13,7 +13,7 @@ class Api
         end
       end
     end
-    Log.create(message: "Api fetch completed at #{Time.now}")
+    Log.create(message: "Api fetch completed.")
   end
 
   def self.create_data(site, time, state)
@@ -53,9 +53,10 @@ class Api
     Api.write_river(river_hash)
   end
 
+  # UNCOMMENT BELOW TO REENABLE TIME SERIES DATA.
   def self.build_river_time(sanitized, time)
     time_hash = {site_code: sanitized["site_code"], time: time, cfs_value: sanitized["cfs_value"]}
-    Api.write_time(time_hash)
+    # Api.write_time(time_hash)
     Api.update_river(sanitized, time)
   end
 

@@ -1,0 +1,15 @@
+Notification from FlowFree.
+===============================================
+
+The following gauges have met the flow conditions you indicated you wished to be notified on.
+
+<%= @rivers.each do |r| %>
+Site Name: <%= r.site_name %>
+Site Code: <%= r.site_code %>
+Current Flow: <%= r.cfs_value %> cfs
+
+<% end %>
+
+You can manage your notifications by signing into FlowFree.
+
+-The FlowFree Team
