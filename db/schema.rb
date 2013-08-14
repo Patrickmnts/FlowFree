@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130808201818) do
+ActiveRecord::Schema.define(version: 20130813225721) do
+
+  create_table "delayed_jobs", force: true do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
   create_table "logs", force: true do |t|
     t.text     "message"
@@ -44,6 +60,29 @@ ActiveRecord::Schema.define(version: 20130808201818) do
   end
 
   add_index "rivers", ["site_code"], name: "index_rivers_on_site_code", unique: true
+
+  create_table "sqlite_sp_functions", id: false, force: true do |t|
+    t.text "name"
+    t.text "text"
+  end
+
+# Could not dump table "sqlite_stat1" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
+# Could not dump table "sqlite_stat3" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
+  create_table "sqlite_vs_links_names", id: false, force: true do |t|
+    t.text "name"
+    t.text "alias"
+  end
+
+  create_table "sqlite_vs_properties", id: false, force: true do |t|
+    t.text "parentType"
+    t.text "parentName"
+    t.text "propertyName"
+    t.text "propertyValue"
+  end
 
   create_table "subscriptions", force: true do |t|
     t.integer  "user_id"
