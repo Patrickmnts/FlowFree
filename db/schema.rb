@@ -61,29 +61,6 @@ ActiveRecord::Schema.define(version: 20130813225721) do
 
   add_index "rivers", ["site_code"], name: "index_rivers_on_site_code", unique: true
 
-  create_table "sqlite_sp_functions", id: false, force: true do |t|
-    t.text "name"
-    t.text "text"
-  end
-
-# Could not dump table "sqlite_stat1" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
-
-# Could not dump table "sqlite_stat3" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
-
-  create_table "sqlite_vs_links_names", id: false, force: true do |t|
-    t.text "name"
-    t.text "alias"
-  end
-
-  create_table "sqlite_vs_properties", id: false, force: true do |t|
-    t.text "parentType"
-    t.text "parentName"
-    t.text "propertyName"
-    t.text "propertyValue"
-  end
-
   create_table "subscriptions", force: true do |t|
     t.integer  "user_id"
     t.string   "site_code"
