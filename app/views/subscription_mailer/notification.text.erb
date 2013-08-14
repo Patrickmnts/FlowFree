@@ -3,10 +3,10 @@ Notification from FlowFree.
 
 The following gauges have met the flow conditions you indicated you wished to be notified on.
 
-<%= @subscription.each do |s| %>
-Site Name: <%= s.river.site_name %>
-Site Code: <%= s.site_code %>
-Current Flow: <%= s.river.cfs_value %> cfs
+<%= @rivers.each do |r| %>
+Site Name: <%= r.site_name %>
+Site Code: <%= r.site_code %>
+Current Flow: <%= r.cfs_value %> cfs
 
 <% end %>
 

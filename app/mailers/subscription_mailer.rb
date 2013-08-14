@@ -1,11 +1,9 @@
 class SubscriptionMailer < ActionMailer::Base
-  default from: "no-reply@example.com"
+  default from: "address@example.com"
 
-  def notification(user, subscription)
+  def notification(user, rivers)
     @user = user
-    @subscription = subscription
+    @rivers = rivers
     mail(to: @user.email, subject: 'Notification from FlowFree.')
   end
 end
-
-# @subscriptions = Subscription.joins(:river).where("user_id = ?", params[:id])
